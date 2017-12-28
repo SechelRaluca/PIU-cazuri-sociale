@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Cazuri Sociale</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+</head>
+<body>
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+                 <img src="../images/logo.jpg"
+                 th:src="@{images/carrousel/image4.jpg}" alt="Flower" width="200"
+                 height="80"/>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Acasă</a></li>
+ 		    <li><a class="dropdown-toggle"
+                   data-toggle="dropdown"
+                   href="#">Implică-te!<span
+                    class="caret"></span></a>
+			 <ul class="dropdown-menu">
+                            <li><a href="#">Donează</a></li>
+                            <li><a href="#">Acționează</a></li>
+			    <li><a href="#">Fii voluntar</a></li>
+		 	    <li><a href="#">Participă la eveniment</a></li>
+                        </ul>
+            </li>
+ 		    <li><a class="dropdown-toggle"
+                   data-toggle="dropdown"
+                   href="#">Ce facem?<span
+                    class="caret"></span></a>
+			<ul class="dropdown-menu">
+                            <li><a href="#">Despre noi</a></li>
+                            <li><a href="#">Cazuri recent rezolvate</a></li>
+                        </ul>
+            </li>
+ 		    <li><a href="#">Atelier</a></li>
+ 		    <li><a href="#">Contact</a></li>
+		    <li><a href="#">Intră</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 	End of Application NAVBAR -->
+
+</div>
+</body>
+</html>
