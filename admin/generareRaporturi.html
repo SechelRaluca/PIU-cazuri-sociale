@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Generare raporturi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+    <script src="../js/dateValidation.js"></script>
+
+    <script>
+        $(function () {
+            $(".dropdown-menu li a").click(function () {
+                $("#select").text($(this).text());
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="adminHomePage.html">Acasă</a></li>
+                    <li><a href="#">ONG</a></li>
+                    <li><a href="#">Asociații locale</a></li>
+                    <li><a href="#">Generare raporturi</a></li>
+                    <li><a href="#">Adaugă membru</a></li>
+                    <li><a href="#">Gestiune monetară</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 	End of Application NAVBAR -->
+
+</div>
+
+<div id="band" class="container text-center">
+
+    <h3>Generare raporturi</h3>
+
+    <label class="control-label col-sm-2">Filtrare:</label>
+    <br>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Status caz:</label>
+        <ul class="nav navbar-nav">
+            <li>
+                <button class="dropdown-toggle btn-primary btn-lg btn-success" id="select"
+                        data-toggle="dropdown">Selectați
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Rezolvat</a></li>
+                    <li><a href="#">În așteptare</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="container text-center">
+        <div class="form-group" id="startDateContainer">
+            <label class="control-label col-sm-2" for="startDate">Dată Început:</label>
+            <div class="input-group input-append date col-sm-10" id="startDateRangePicker"
+                 style="padding-right: 15px;padding-left: 15px">
+                <input type="date" class="form-control" name="startDate" id="startDate"
+                       th:required="required"/>
+                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+        <div class="form-group" id="endDateContainer">
+            <label class="control-label col-sm-2" for="endDate">Dată Final:</label>
+            <div class="input-group input-append date col-sm-10" id="endDateRangePicker"
+                 style="padding-right: 15px;padding-left: 15px">
+                <input type="date" class="form-control" name="endDate" id="endDate"
+                       th:required="required"/>
+                <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="isValid($('#startDate').val(), $('#endDate').val())"
+            class="btn btn-primary btn-lg btn-success"
+            data-toggle="modal" data-target="#myModalTest">Previzualizare
+    </button>
+
+    <button type="button" class="btn btn-primary btn-lg btn-success"
+            data-toggle="modal" data-target="#myModalTest">Export
+    </button>
+
+</div>
+</body>
+</html>
