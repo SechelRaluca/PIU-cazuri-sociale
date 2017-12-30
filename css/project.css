@@ -85,6 +85,7 @@ h3, h4 {
 	color: #f1f1f1;
 	border-radius: 0;
 	transition: .2s;
+	width: 200px;
 }
 
 .btn:hover, .btn:focus {
@@ -213,4 +214,8 @@ div section h3{
 	background-color: #2d2d30;
 	opacity: 0.9;
 	text-align: center;
+}
+
+.raport{
+	display: inline;
 }
