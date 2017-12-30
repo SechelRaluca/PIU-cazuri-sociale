@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestiune monetara</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+    <script>
+        function clicked_on() {
+            document.getElementById('suma').innerHTML = '0';
+        }
+    </script>
+
+</head>
+<body>
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="adminHomePage.html">Acasă</a></li>
+                    <li><a href="#">ONG</a></li>
+                    <li><a href="#">Asociații locale</a></li>
+                    <li><a href="generareRaporturi.html">Generare raporturi</a></li>
+                    <li><a href="adaugareMembru.html">Adaugă membru</a></li>
+                    <li><a href="gestiuneMonetara.html">Gestiune monetară</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div id="band" class="container text-center">
+
+    <h3>Gestiune monetară</h3>
+
+    <h2>Suma curentă:</h2>
+    <h2 id="suma">20.000</h2>
+
+    <div class="container">
+        <div class="row">
+            <div>
+                <form class="col-md-4"
+                      style="height: 50%;width: 50%;">
+                    <img
+                            src="../images/smile.jpeg" width="50px" height="50px"
+                            class="img-rounded img-responsive"
+                            th:src="@{../images/smile.jpeg}"/>
+                    <button type="button" class="btn btn-primary btn-lg btn-success"
+                            data-toggle="modal" data-target="#repModal">Repartizare
+                    </button>
+                </form>
+            </div>
+
+            <div>
+                <form class="col-md-4"
+                      style="height: 50%;width: 50%;">
+                    <img
+                            src="../images/sad.jpg" width="50px" height="50px"
+                            class="img-rounded img-responsive"
+                            th:src="@{../images/sad.jpg}"/>
+                    <button type="button" class="btn btn-primary btn-lg btn-success"
+                            data-toggle="modal" data-target="#notModal">Notificare
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="repModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirmare repartizare</h4>
+            </div>
+            <div class="modal-body">
+                <button onclick="toastr.info('Repartizare realizată cu succes!');
+                       clicked_on()"
+                        type="button" class="btn btn-primary btn-lg btn-success">
+                    Confirmare
+                </button>
+
+                <button onclick="toastr.error('Repartizare anulată!')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-dismiss="modal">
+                    Anulare
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="notModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirmare notificare</h4>
+            </div>
+            <div class="modal-body">
+                <button data-toggle="modal" data-target="#emailModal"
+                        type="button" class="btn btn-primary btn-lg btn-success">
+                    Confirmare
+                </button>
+
+                <button onclick="toastr.error('Notificare anulată!')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-dismiss="modal">
+                    Anulare
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="emailModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Trimite e-mail</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" id="destContainer">
+                    <label class="control-label col-sm-2">Către:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="dest" name="dest"
+                               autofocus="autofocus"
+                               placeholder="colaboratori Cluj"
+                               th:required="required" class="form-control"/>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group" id="subContainer">
+                    <label class="control-label col-sm-2">Subiect:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="sub" name="sub"
+                               autofocus="autofocus"
+                               placeholder="Fonduri insufuciente"
+                               th:required="required" class="form-control"/>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group" id="msgContainer">
+                    <label class="control-label col-sm-2">Mesaj:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="msg" name="msg"
+                               autofocus="autofocus"
+                               placeholder="..."
+                               th:required="required" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
