@@ -33,6 +33,12 @@
         });
     </script>
 
+    <script>
+        if (isValid($('#startDate').val(), $('#endDate').val())) {
+            $('#prev').setAttribute("data-target", "#myModal");
+        }
+    </script>
+
 </head>
 <body>
 
@@ -107,14 +113,75 @@
         </div>
     </div>
 
-    <button onclick="isValid($('#startDate').val(), $('#endDate').val())"
-            class="btn btn-primary btn-lg btn-success"
-            data-toggle="modal" data-target="#myModalTest">Previzualizare
+    <button id="prev" onclick="if (isValid($('#startDate').val(),$('#endDate').val()))
+            {$('#prev').attr('data-target', '#myModal')}"
+            class="btn btn-primary btn-lg btn-success" data-target="myModal"
+            data-toggle="modal">Previzualizare
     </button>
 
-    <button type="button" class="btn btn-primary btn-lg btn-success"
-            data-toggle="modal" data-target="#myModalTest">Export
+    <button id="exp" onclick="if (isValid($('#startDate').val(),$('#endDate').val()))
+            {$('#exp').attr('data-target', '#myModal1')}"
+            type="button" class="btn btn-primary btn-lg btn-success"
+            data-toggle="modal">Export
     </button>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Alegeți format</h4>
+                </div>
+                <div class="modal-body">
+                    <button onclick="toastr.info('Raport generat cu succes!')"
+                            type="button" class="btn btn-primary btn-lg btn-success">
+                        PDF
+                    </button>
+
+                    <button onclick="toastr.info('Raport generat cu succes!')"
+                            type="button" class="btn btn-primary btn-lg btn-success">
+                        CSV
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="myModal1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmare export</h4>
+                </div>
+                <div class="modal-body">
+                    <button onclick="toastr.info('Raport exportat cu succes!')"
+                            type="button" class="btn btn-primary btn-lg btn-success">
+                        Confirmare
+                    </button>
+
+                    <button onclick="toastr.error('Export anulat!')"
+                            type="button" class="btn btn-primary btn-lg btn-success"
+                            data-dismiss="modal">
+                        Anulare
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </div>
 </body>
