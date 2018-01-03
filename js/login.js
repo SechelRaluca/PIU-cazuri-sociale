@@ -5,13 +5,14 @@ function validate() {
     var password = document.getElementById("password").value;
     if (username === "admin" && password === "admin") {
         window.location = "../admin/adminHomePage.html";
-    }
-    else {
+    }else if(username.search("member") !== -1 && password.search("member") !== -1) {
+		window.location = "../member/memberHomePage.html"
+	}else {
         attempt--;
-        if (username === "admin" && password !== "admin") {
+        if ((username === "admin" && password !== "admin") || (username.search("member") !== -1 && password.search("member") === -1)) {
             alert("Parolă incorectă! Reîncercați!");
         }
-        else if (username !== "admin" && password === "admin") {
+        else if ((username !== "admin" && password === "admin") || (username.search("member") === -1 && password.search("member") !== -1)) {
             alert("Utilizator incorect! Reîncercați!");
         }
         else {
