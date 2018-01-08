@@ -219,3 +219,48 @@ div section h3{
 .raport{
 	display: inline;
 }
+
+#description {
+	text-align: left;
+	color: black;
+}
+
+#sumaAlocataCaz1 {
+	color: black;
+	display: inline;
+}
+
+#sumaAlocataCaz2 {
+	color: black;
+	display: inline;
+}
+
+#sumaAlocataCaz3 {
+	color: black;
+	display: inline;
+}
+
+#sumaCaz1 {
+	color: black;
+	float: left;
+}
+
+#sumaCaz2 {
+	color: black;
+	float: left;
+}
+
+#sumaCaz3 {
+	color: black;
+	float: left;
+}
+
+#baniCazSocial {
+	color: black;
+	float: left;	
+}
+
+.fa-times {
+	color: black;
+	float: right;
+}
