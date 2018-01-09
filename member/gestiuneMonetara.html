@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestiune monetara</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="../js/gestiuneMonetara.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- 	<script>
+		function link() {
+			var r = confirm('Sunteţi sigur că doriţi să părăsiţi pagina?');
+			if(r) {
+				alert('Doar administratorul poate efectua această acţiune!');
+				window.location = 'memberHomePage.html';
+			}else {
+				return false;
+			}
+		}
+	</script> -->
+</head>
+<body>
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="memberHomePage.html">Acasă</a></li>
+                    <li><a href="#">ONG</a></li>
+                    <li><a href="#">Asociații locale</a></li>
+<!--                     <li><a onclick="link()">Generare raporturi</a></li>
+                    <li><a onclick="link()">Adaugă membru</a></li> -->
+                    <li><a href="gestiuneMonetara.html">Gestiune monetară</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div id="band" class="container text-center">
+	<i id="iconId" class="fa fa-times" onclick="window.location = 'memberHomePage.html';"></i>
+	<h3>Gestiune monetară</h3>
+	
+    <h2>Suma curentă:</h2>
+	<h2 id="suma">40000</h2>
+	<p style="color: black;">Cazurile sunt afişate în ordinea gravităţii, respectiv a perioadei de adăugare.</p>
+
+    <div class="container">
+        <div class="row">
+            <div>
+                <form>
+					<div>
+						<div>
+							<img
+								src="../images/caz1.jpg" width="400px" height="200px"
+								class="img-responsive"
+								th:src="@{../images/caz1.jpg}"/>
+							<p id="description">Caz social 1</p>								
+						</div>
+						<div id="baniCazSocial">Suma alocată acestui caz: <div id="sumaAlocataCaz1">0</div> RON
+						</div>
+						</br>
+						<input id="sumaCaz1" type="number" autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+						<button id="repartizareCaz1"
+								type="button" class="btn btn-primary btn-lg btn-success"
+								data-toggle="modal" onclick="checkSumInput('sumaCaz1', 'sumaAlocataCaz1', '#repartizareCaz1', '#repModal1')">Repartizare
+						</button>						
+					</div>
+                </form>
+            </div>
+			
+			</br>
+			
+			<div>
+                <form>
+					<div>
+						<div>
+							<img
+								src="../images/caz2.jpg" width="400px" height="200px"
+								class="img-responsive"
+								th:src="@{../images/caz2.jpg}"/>
+							<p id="description">Caz social 2</p>
+						</div>
+						<div id="baniCazSocial">Suma alocată acestui caz: <div id="sumaAlocataCaz2">0</div> RON
+						</div>
+						</br>
+						<input id="sumaCaz2" type="number"autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+						<button id="repartizareCaz2"
+								type="button" class="btn btn-primary btn-lg btn-success"
+								data-toggle="modal" onclick="checkSumInput('sumaCaz2', 'sumaAlocataCaz2', '#repartizareCaz2', '#repModal2')">Repartizare
+						</button>	
+					</div>
+                </form>
+            </div>
+			
+			</br>
+			
+			<div>
+                <form>
+					<div>
+						<div>
+							<img
+								src="../images/caz3.jpg" width="400px" height="200px"
+								class="img-responsive"
+								th:src="@{../images/caz3.jpg}"/>
+							<p id="description">Caz social 3</p>							
+						</div>
+						<div id="baniCazSocial">Suma alocată acestui caz: <div id="sumaAlocataCaz3">0</div> RON
+						</div>
+						</br>
+						<input id="sumaCaz3" type="number" autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+						<button id="repartizareCaz3"
+								type="button" class="btn btn-primary btn-lg btn-success"
+								data-toggle="modal" onclick="checkSumInput('sumaCaz3', 'sumaAlocataCaz3', '#repartizareCaz3', '#repModal3')">Repartizare
+						</button>
+					</div>
+                </form>
+            </div>				
+        </div>
+    </div>
+</div>
+
+
+<div id="repModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button onclick="disablePopup('#repartizareCaz1')" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirmare repartizare</h4>
+            </div>
+            <div class="modal-body">
+                <button onclick="send('sumaCaz1', 'sumaAlocataCaz1'); disablePopup('#repartizareCaz1')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+						data-dismiss="modal">
+                    Confirmare
+                </button>
+
+                <button onclick="toastr.error('Repartizare anulată!'); disablePopup('#repartizareCaz1')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-dismiss="modal">
+                    Anulare
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="repModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button onclick="disablePopup('#repartizareCaz2')" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirmare repartizare</h4>
+            </div>
+            <div class="modal-body">
+                <button onclick="send('sumaCaz2', 'sumaAlocataCaz2'); disablePopup('#repartizareCaz2')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+						data-dismiss="modal">
+                    Confirmare
+                </button>
+
+                <button onclick="toastr.error('Repartizare anulată!'); disablePopup('#repartizareCaz2')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-dismiss="modal">
+                    Anulare
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="repModal3" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button onclick="disablePopup('#repartizareCaz3')" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirmare repartizare</h4>
+            </div>
+            <div class="modal-body">
+                <button onclick="send('sumaCaz3', 'sumaAlocataCaz3'); disablePopup('#repartizareCaz3')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+						data-dismiss="modal">
+                    Confirmare
+                </button>
+
+                <button onclick="toastr.error('Repartizare anulată!'); disablePopup('#repartizareCaz3')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-dismiss="modal">
+                    Anulare
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
