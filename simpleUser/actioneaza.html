@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Acţionează</title>
+    <title>Donează pentru un caz</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://fonts.googleapis.com/css?family=Lato"
@@ -22,6 +22,10 @@
             th:src="@{~/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" media="screen"
           href="../css/project.css" th:href="@{/css/project.css}"/>
+		  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
+    <script src="../js/actioneaza.js"></script>
 </head>
 
 <body id="#homepage">
@@ -52,7 +56,7 @@
 								    <li><a href="#">Donează online</a></li>
 									<li><a href="#">Donează 2%</a></li>
 									<li><a href="#">Donează bunuri</a></li>
-									<li><a href="actioneaza.html">Acționează</a></li>								
+									<li><a href="actioneaza.html">Donează pentru un caz</a></li>								
 								</ul>
 							</li>
                             <li><a href="#">Fii voluntar</a></li>
@@ -81,7 +85,7 @@
 
 <div>
 	<div>
-		<div id="fixed">Acţionează<br>
+		<div id="fixed">Donează pentru un caz<br>
 			<input id="searchButton" type="text" name="search" placeholder="Caută...">
 			<br><a class="pagination1" href="actioneaza.html">1</a>
 			<a class="pagination2">2</a>
@@ -95,7 +99,7 @@
 				<img src="../images/caz1.jpg">
 				<p class="paragraphAdjust">Caz 1</p>
 				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
-						data-toggle="modal">Detalii</button>
+						data-toggle="modal" data-target="#detailModal1">Detalii</button>
 			</section>
 			<section id="sectionAdjust">
 				<img src="../images/caz2.jpg">
@@ -161,5 +165,102 @@
 <br>
 <br>
 <br>
+
+<div id="detailModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Detalii</h4>
+            </div>
+            <div class="modal-body">
+				<img src="../images/caz1.jpg" width="200px" height="150px">
+				<button onclick=""
+                        type="button" class="btn btn-primary btn-lg btn-success donateButton"
+                        data-toggle="modal" data-target="#donateModal1">
+                    Donează
+                </button>
+				<p class="paragraphAdjust">Caz 1</p>
+				<br>
+				<p class="paragraphAdjust helpSection">Contact: ...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="donateModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Donează online!</h4>
+            </div>
+            <div class="modal-body" style="color: black; overflow: auto;">
+				<label class="paragraphAdjust helpSection">Vreau să donez:</label><br>
+				<input id="lunar" type="radio" name="frequency" value="lunar"> Lunar<br>
+				<input id="oSinguraData" type="radio" name="frequency" value="oSinguraData"> O singură dată<br>
+				<label class="paragraphAdjust helpSection">Suma:</label><br>
+				<input id="sumaCaz1" onblur="validateSum('sumaCaz1')" type="number" autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+				<hr style="border-color: #fff;">
+				<label class="paragraphAdjust helpSection">Datele dumneavoastră:</label><br>
+				<!-- <label class="paragraphAdjust formSection">Numele:</label> -->
+				<input id="nume1" onblur="validateLastName('nume1')" type="text" autocomplete="off" placeholder="Introduceţi numele..."><br>
+				<!-- <label class="paragraphAdjust formSection">Prenumele:</label> -->
+				<input id="prenume1" onblur="validateFirstName('prenume1')" type="text" autocomplete="off" placeholder="Introduceţi prenumele..."><br>
+				<!-- <label class="paragraphAdjust formSection">Telefon:</label> -->
+				<input id="telefon1" onblur="validatePhoneNumber('telefon1')" type="text" autocomplete="off" placeholder="Introduceţi telefonul..."><br>
+				<!-- <label class="paragraphAdjust formSection">Email:</label> -->
+				<input id="email1" onblur="validateEmail('email1')" type="text" autocomplete="off" placeholder="Introduceţi email-ul..."><br>
+				<br>
+ 				<button id="doneaza1" onclick="donate('#lunar', '#oSinguraData', 'sumaCaz1', 'nume1', 'prenume1', 'telefon1', 'email1', '#doneaza1', '#payModal1')"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-toggle="modal">
+                    Donează
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="payModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Detalii card bancar</h4>
+            </div>
+            <div class="modal-body" style="color: black; overflow: auto;">
+				<label class="paragraphAdjust helpSection">Tip card:</label>
+				<select name="card">
+					<option value="master">Mastercard</option>
+					<option value="maestro">Maestro</option>
+					<option value="visa">Visa</option>
+					<option value="visaElectron">Visa Electron</option>
+				</select>
+				<br>
+				<label class="paragraphAdjust formSection">Număr card:</label><br>
+				<input id="cardNumber1" type="text" autocomplete="off" placeholder="nnnn nnnn nnnn nnnn"><br>
+				<label class="paragraphAdjust formSection">Data expirării:</label><br>
+				<input type="date" class="form-control" name="expirationDate" id="expirationDate1"
+                       th:required="required"/>
+				<label class="paragraphAdjust formSection">Număr verificare card:</label><br>
+				<input id="cardVerificationNumber1" type="text" autocomplete="off" placeholder="nnn"><br>		
+				<br>
+ 				<button onclick=""
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-dismiss="modal" data-toggle="modal">
+                    Plăteşte
+                </button>				
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
