@@ -54,7 +54,7 @@ function validateFirstName(prenume){
 function validatePhoneNumber(telefon){
 	var phoneNumber = document.getElementById(telefon);
 	if(!/^\d{4}\-\d{6}$/.test(phoneNumber.value)){
-		toastr.error("Numarul de telefon nu respecta formatul nnnn-nnnnnn (4 - 6)");
+		toastr.error("Numărul de telefon nu respectă formatul nnnn-nnnnnn (4-6)");
 		phoneNumber.focus();
 		return false;
 	}else{
@@ -104,6 +104,94 @@ function donate(frecventa1, frecventa2, suma, nume, prenume, telefon, email, but
 		return false;
 	}else{
 		$(buton).attr('data-target', popup);
+		$(buton).attr('data-dismiss', 'modal');
+		return true;
+	}
+}
+
+function disablePopup(buton) {
+	$(buton).attr('data-target', "");
+			$(buton).attr('data-dismiss', "");
+}
+
+function resetFieldsDonatePopup(frecventa1, frecventa2, suma, nume, prenume, telefon, email){	
+	$(frecventa1).attr('checked',false);
+	$(frecventa2).attr('checked',false);
+	document.getElementById(suma).value="";
+	document.getElementById(nume).value="";
+	document.getElementById(prenume).value="";
+	document.getElementById(telefon).value="";
+	document.getElementById(email).value="";
+}
+
+function validateCardNumber(numarCard){
+	var cardNumber = document.getElementById(numarCard);
+	if(!/^\d{4}\ \d{4}\ \d{4}\ \d{4}$/.test(cardNumber.value)){
+		toastr.error("Numărul cardului nu respectă formatul nnnnn-nnnn-nnnnn-nnnn (4-4-4-4)");
+		cardNumber.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function validateCardVerificationNumber(numarVerificareCard){
+	var cardVerificationNumber = document.getElementById(numarVerificareCard);
+	if(!/^\d{3}$/.test(cardVerificationNumber.value)){
+		toastr.error("Numărul de verificare a cardului nu respectă formatul nnn (3)");
+		cardVerificationNumber.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+function isValid(expirationDate) {
+
+	var cardExpirationDate = document.getElementById(expirationDate).value;
+	var today = new Date().toISOString().slice(0,10);
+	
+    if (cardExpirationDate === "") {
+        toastr.error('Introduceți o valoare pentru data expirării cardului!');
+		document.getElementById(expirationDate).focus();
+        return false;
+    } else if (cardExpirationDate < today) {
+        toastr.error('Reverificaţi data scrisă pe card sau cardul dumneavoatră nu mai este valabil.');
+		document.getElementById(expirationDate).focus();
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function resetFieldsCardPopup(cardNumber, expirationDate, cardVerificationNumber){	
+	document.getElementById(cardNumber).value="";
+	document.getElementById(expirationDate).value="";
+	document.getElementById(cardVerificationNumber).value="";
+}
+
+function pay(cardNumber, expirationDate, cardVerificationNumber, buton) {
+	var flag = 0;
+	
+	if(!validateCardNumber(cardNumber)) {
+		flag = 1;
+	}
+	
+	if(!isValid(expirationDate)) {
+		flag = 1;
+	}
+	
+	if(!validateCardVerificationNumber(cardVerificationNumber)) {
+		flag = 1;
+	}
+	
+	if(flag == 1){
+		toastr.error("Verificaţi câmpurile formularului şi completaţile corespunzător pentru a efectua plata!");
+		return false;
+	}else{
+		$(buton).attr('data-dismiss', 'modal');
+		resetFieldsCardPopup(cardNumber, expirationDate, cardVerificationNumber);
+		toastr.info('Donaţie efectuată cu succes!');
 		return true;
 	}
 }
