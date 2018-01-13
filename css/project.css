@@ -264,3 +264,172 @@ div section h3{
 	color: black;
 	float: right;
 }
+
+.fit {
+	float: right;
+	width: 45%;
+}
+
+.fit1 {
+	float: right;
+	width: 50%;
+	padding-left: 65px;
+	border-left: 1px solid #2d2d30;
+}
+
+.adjust {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 60px;
+	padding-right: 0px;
+	margin-right: 0px;
+	width: 67.5%;
+}
+
+#fixed {
+	position: fixed;
+	top: 75px;
+	left: 50px;
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#sectionAdjust {
+	width: 400px;
+	height: 250px;
+}
+
+#list {
+	position: fixed;
+	top: 250px;
+	bottom: 10px;
+	left: 35px;
+	overflow: auto;
+	border-top: 1px solid #2d2d30;
+}
+
+#list::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+.paragraphAdjust {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	height: auto;
+	color: black;
+}
+
+.detailButton {
+	float: right;
+	margin-right: 90px;
+	padding: 0 0 0 0;
+	width: 100px;
+}
+
+input#searchButton {
+	height: 40px;
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchIcon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	margin-bottom: 10px;
+}
+
+input#searchButton:focus {
+    width: 100%;
+}
+
+#line {
+	border-color: #2d2d30;
+}
+
+.helpSection {
+	color: black;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.pagination1 {
+	font-weight: normal;
+	color: black;
+	margin: 0 0 0 680px;
+	font-size: 25px;
+	float: right;
+	position: fixed;
+}
+
+.pagination2 {
+	font-weight: normal;
+	color: black;
+	margin: 0 0 0 700px;
+	font-size: 25px;
+	float: right;
+	position: fixed;
+}
+
+.pagination3 {
+	font-weight: normal;
+	color: black;
+	margin: 0 0 0 720px;
+	font-size: 25px;
+	float: right;
+	position: fixed;
+}
+
+.pagination4 {
+	font-weight: normal;
+	color: black;
+	margin: 0 0 0 740px;
+	font-size: 25px;
+	float: right;
+	position: fixed;
+}
+
+.pagination5 {
+	font-weight: normal;
+	color: black;
+	margin: 0 0 0 760px;
+	font-size: 25px;
+	float: right;
+	position: fixed;
+}
+
+.pagination1:hover {
+	color: black;
+}
+
+.pagination2:hover {
+	color: black;
+}
+
+.pagination3:hover {
+	color: black;
+}
+
+.pagination4:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.pagination5:hover {
+	color: black;
+}
+
+.donateButton {
+	margin-left: 50px;
+}
+
+.formSection {
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+}
