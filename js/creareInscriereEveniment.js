@@ -67,6 +67,7 @@ function validareData()
 	if (data === "")
 	{
 		document.getElementById('dataEveniment').style.borderColor = "red";
+		
 		return false;
 	}
 	
@@ -77,6 +78,7 @@ function validareData()
 	if(varData <= azi) 
 	{
 		document.getElementById('dataEveniment').style.borderColor = "red";
+		
 		return false;
 	}
 	
@@ -116,7 +118,7 @@ function validareNumarPersoane()
 {
 	var nrPersoane = document.getElementById('numarPersoaneEveniment').value;
 	
-	if (nrPersoane === "" || parseInt(nrPersoane)<=0)
+	if (nrPersoane === "")
 	{
 		document.getElementById('numarPersoaneEveniment').style.borderColor = "red";
 		return false;
@@ -141,3 +143,41 @@ function validareTransport()
 	return true;
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  
+	document.getElementById('numeEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Numele trebuie introdus !");
+            }
+        };
+	
+	document.getElementById('dataEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Data trebuie introdusa si trebuie sa fie in viitor!");
+            }
+        };
+		
+	document.getElementById('oraEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Ora trebuie introdusa");
+            }
+        };
+		
+	document.getElementById('locatieEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Locatia trebuie introdusa !");
+            }
+        };
+		
+	document.getElementById('numarPersoaneEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Numarul persoanelor trebuie introdus !");
+            }
+        };
+		
+});
