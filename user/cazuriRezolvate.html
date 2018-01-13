@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Cazuri recent rezolvate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>	  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+		  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>	
+	
+	<script>
+		function openMenu() {
+            $('.nav a.menu').next('ul').toggle();
+		}
+	</script>
+</head>
+
+<body id="#homepage">
+<!--<div th:include="fragments/header :: header"></div>-->
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html">Acasă</a></li>
+                    <li><a class="menu dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Implică-te!<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="#">Doneaza online</a></li>
+                                    <li><a href="#">Donează 2%</a></li>
+                                    <li><a href="#">Donează bunuri</a></li>
+                                    <li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
+                            <li><a href="#">Participă la eveniment</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Ce facem?<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Despre noi</a></li>
+                            <li><a href="cazuriRezolvate.html">Cazuri recent rezolvate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="atelier.html">Atelier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../fragments/login.html">Intră</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 	End of Application NAVBAR -->
+
+</div>
+
+<div>
+	<div>
+		<div id="fixed">Cazuri recent rezolvate<br>
+			<a class="pagination1" href="cazuriRezolvate.html">1</a>
+			<a class="pagination2">2</a>
+			<a class="pagination3">3</a>
+			<a class="pagination4">...</a>
+			<a class="pagination5">20</a>				
+		</div>
+		
+		<div id="list" style="top: 180px;">
+			<section id="sectionAdjust">
+				<img src="../images/caz1.jpg">
+				<p class="paragraphAdjust">Caz 1</p>
+				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+						data-toggle="modal" data-target="#detailModal1">Mai mult</button>
+			</section>
+			<section id="sectionAdjust">
+				<img src="../images/caz2.jpg">
+				<p class="paragraphAdjust">Caz 2</p>
+				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+						data-toggle="modal" data-target="#detailModal2">Mai mult</button>
+			</section>
+			
+			<br><br>
+			<br><br>
+			<br><br>
+			
+			<section id="sectionAdjust">
+				<img src="../images/caz3.jpg">
+				<p class="paragraphAdjust">Caz 3</p>
+				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+						data-toggle="modal" data-target="#detailModal3">Mai mult</button>
+			</section>
+			
+			<br><br>
+			<br><br>
+			<br><br>
+			
+			<hr id="line">
+			
+			<section id="sectionAdjust" class="helpSection">
+				Contact:
+				<br>
+				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+						data-toggle="modal" onclick="window.location = 'contact.html'">Contact</button>
+			</section>
+		</div>
+	</div>
+
+	<div class="fit">
+		<div id="band" class="container text-center adjust">
+			<h3 style="letter-spacing: 0px;">Ultimele cazuri soluţionate</h3>
+		</div>
+
+		<div class="fit1" style="overflow: auto;">
+			<img src="../images/caz2.jpg" width="200px" height="140px">
+			<p></p>
+
+			<img src="../images/caz3.jpg" width="200px" height="140px">
+			<p></p>
+
+			<img src="../images/caz1.jpg" width="200px" height="140px">
+			<p></p>
+			
+			<br>
+			<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+					data-toggle="modal" onclick="openMenu()">Implică-te</button>
+			<br><br>
+			<p>Vrei sa achiziţionezi produse handmade?</p>		
+			<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+					data-toggle="modal" onclick="window.location = 'atelier.html'">Atelier</button>	
+			<br><br>
+		</div>
+	</div>
+</div>
+	
+<br>
+<br>
+<br>
+
+<div id="detailModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Cazul 1</h4>
+            </div>
+            <div class="modal-body">
+				<label class="paragraphAdjust helpSection">Detalii:</label><br><br>	
+				<img src="../images/caz1.jpg" width="200px" height="150px">
+				<img src="../images/caz1.jpg" width="200px" height="150px">
+				<br><br>
+				<p class="paragraphAdjust">Caz 1</p>
+				<p class="paragraphAdjust">An de an asociația noastră umanitară, cu ajutorul dvs, sponsorii și donatorii noștri, ajută cu alimente zeci de bătrâni săraci, unii singuri sau neputincioși.</p>
+				<br><br>				
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="detailModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Cazul 2</h4>
+            </div>
+            <div class="modal-body">
+				<label class="paragraphAdjust helpSection">Detalii:</label><br><br>	
+				<img src="../images/caz2.jpg" width="200px" height="150px">
+				<img src="../images/caz2.jpg" width="200px" height="150px">
+				<br><br>
+				<p class="paragraphAdjust">Caz 2</p>
+				<p class="paragraphAdjust">În fiecare an ne implicăm în ajutorarea copiilor săraci, care nu au posibilitatea de a merge la școală sau sunt în pragul abandonului școlar din cauza lipsei de rechizite.</p>
+				<br><br>				
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="detailModal3" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Cazul 3</h4>
+            </div>
+            <div class="modal-body">
+				<label class="paragraphAdjust helpSection">Detalii:</label><br><br>		
+				<img src="../images/caz3.jpg" width="200px" height="150px">
+				<img src="../images/caz3.jpg" width="200px" height="150px">
+				<br><br>
+				<p class="paragraphAdjust">Caz 3</p>
+				<p class="paragraphAdjust">În pragul sărbătorilor, asociația noastră încearcă să îi ajute și pe cei mai puțin norocoși să se bucure de această perioadă minunată</p>
+				<br><br>				
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
