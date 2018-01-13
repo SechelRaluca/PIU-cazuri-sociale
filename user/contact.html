@@ -23,9 +23,11 @@
           href="../css/project.css" th:href="@{/css/project.css}"/>
 
     <script>
-        $(function () {
-            $(".dropdown-menu li a").click(function () {
-                $("#select").text($(this).text());
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
             });
         });
     </script>
@@ -54,8 +56,15 @@
                            href="#">Implică-te!<span
                             class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Donează</a></li>
-                            <li><a href="#">Acționează</a></li>
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="#">Doneaza online</a></li>
+                                    <li><a href="#">Donează 2%</a></li>
+                                    <li><a href="#">Donează bunuri</a></li>
+                                    <li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
+                                </ul>
+                            </li>
                             <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
                             <li><a href="#">Participă la eveniment</a></li>
                         </ul>
@@ -71,7 +80,7 @@
                     </li>
                     <li><a href="#">Atelier</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="fragments/login.html">Intră</a></li>
+                    <li><a href="../fragments/login.html">Intră</a></li>
                 </ul>
             </div>
         </div>
