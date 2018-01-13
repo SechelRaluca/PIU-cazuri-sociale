@@ -433,3 +433,7 @@ input#searchButton:focus {
 	font-weight: bold;
 	font-size: 15px;
 }
+#closeButton{
+	color:black;
+	float:right;
+}
