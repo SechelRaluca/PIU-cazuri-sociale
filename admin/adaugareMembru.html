@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" media="screen"
           href="../css/project.css" th:href="@{/css/project.css}"/>
 
+    <script src="../js/adaugareMembru.js"></script>
+
     <script>
         $(function () {
             $(".dropdown-menu li a").click(function () {
@@ -28,6 +30,15 @@
             });
         });
     </script>
+
+    <script>
+        if (isValid($('#name').val(),$('#prenume').val(),$('#email').val(),
+                $('#address').val(),$('#phone').val(),$('#username').val(),$('#password').val())){
+            $('#addMem').setAttribute("data-target", "#myModal");
+        }
+    </script>
+
+
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
@@ -60,7 +71,9 @@
 
 </div>
 
-<div class="container">
+<div class="container text-center">
+    <h3>Adăugare membru</h3>
+    <br>
     <div class="row">
 
         <div>
@@ -156,6 +169,36 @@
                     </ul>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <button id="addMem" onclick=" if (isValid($('#name').val(),$('#prenume').val(),$('#email').val(),
+            $('#address').val(),$('#phone').val(),$('#username').val(),$('#password').val()))
+            {$('#addMem').attr('data-target', '#myModal')}"
+                    type="button" class="btn btn-primary btn-lg btn-success" data-target="myModal"
+                    data-toggle="modal">Adaugă
+            </button>
+
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Membru adăugat cu succes !</h4>
+                        </div>
+                        <div class="modal-body">
+                            <button onclick="toastr.info('Membru adăugat cu succes!')"
+                                    type="button" class="btn btn-primary btn-lg btn-success" data-dismiss="modal">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </div>
 
     </div>
