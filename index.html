@@ -21,6 +21,16 @@
             th:src="@{~/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" media="screen"
           href="css/project.css" th:href="@{/css/project.css}"/>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
 </head>
 
 <body id="#homepage">
@@ -44,14 +54,13 @@
                            href="#">Implică-te!<span
                             class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-toggle"
-                                   href="#">Donează<span
-                                    class="caret"></span></a>
-                                <ul class="dropdown-submenu">
-                                    <li><a href="#">Donează online</a></li>
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="#">Doneaza online</a></li>
                                     <li><a href="#">Donează 2%</a></li>
                                     <li><a href="#">Donează bunuri</a></li>
-                                    <li><a href="user/actioneaza.html">Donează pentru un caz</a></li>
+                                    <li><a href="user/actioneaza.html">Donează pentru un anumit caz</a></li>
                                 </ul>
                             </li>
                             <li><a href="user/inregistrareVoluntar.html">Fii voluntar</a></li>
