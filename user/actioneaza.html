@@ -26,6 +26,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
     <script src="../js/actioneaza.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+	
+	<script>
+		function openMenu() {
+            $('.nav a.menu').next('ul').toggle();
+			$('.dropdown-menu a.test').next('ul').toggle();
+		}
+	</script>
+	
 </head>
 
 <body id="#homepage">
@@ -44,22 +62,21 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../index.html">Acasă</a></li>
-                    <li><a class="dropdown-toggle"
+                    <li><a class="menu dropdown-toggle"
                            data-toggle="dropdown"
                            href="#">Implică-te!<span
                             class="caret"></span></a>
-                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-toggle"
-								   href="#">Donează<span
-								   class="caret"></span></a>
-								<ul class="dropdown-submenu">
-								    <li><a href="#">Donează online</a></li>
-									<li><a href="#">Donează 2%</a></li>
-									<li><a href="#">Donează bunuri</a></li>
-									<li><a href="actioneaza.html">Donează pentru un caz</a></li>								
-								</ul>
-							</li>
-                            <li><a href="#">Fii voluntar</a></li>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="#">Doneaza online</a></li>
+                                    <li><a href="#">Donează 2%</a></li>
+                                    <li><a href="#">Donează bunuri</a></li>
+                                    <li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
                             <li><a href="#">Participă la eveniment</a></li>
                         </ul>
                     </li>
@@ -69,11 +86,11 @@
                             class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Despre noi</a></li>
-                            <li><a href="#">Cazuri recent rezolvate</a></li>
+                            <li><a href="cazuriRezolvate.html">Cazuri recent rezolvate</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Atelier</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="atelier.html">Atelier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="../fragments/login.html">Intră</a></li>
                 </ul>
             </div>
@@ -131,10 +148,10 @@
 				Poţi să ajuţi!
 				<br>
 				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
-						data-toggle="modal" onclick="window.location = 'doneaza.html'">Donează</button>
+						data-toggle="modal" onclick="openMenu()">Donează</button>
 				<br>
 				<button type="button" class="btn btn-primary btn-lg btn-success detailButton"
-						data-toggle="modal" onclick="window.location = 'fiiVoluntar.html'">Fii voluntar!</button>
+						data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!</button>
 				<br>
 				Contact:
 				<br>
