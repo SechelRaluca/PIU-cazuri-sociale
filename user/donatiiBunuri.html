@@ -25,17 +25,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <script src="../js/actioneaza.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('.dropdown-menu a.test').on("click", function (e) {
-                $(this).next('ul').toggle();
-                e.stopPropagation();
-                e.preventDefault();
-            });
-        });
-    </script>
-
 </head>
 
 <body id="#homepage">
@@ -124,7 +113,7 @@
             </button>
 
             <button type="button" class="btn btn-primary btn-lg btn-success"
-                    data-toggle="modal" data-target="#emailModal">Trimite-ne e-mail!
+                    data-toggle="modal" data-target="#emailModal">Trimite e-mail
             </button>
             <br>
             <br>
@@ -213,7 +202,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button onclick="toastr.info('E-mail trimis cu succes!')" type="button" class="btn btn-default"
+                <button onclick="toastr.info('E-mail trimis cu succes!')"
+                        data-toggle="modal" data-target=""
+                        data-dismiss="modal"
+                        type="button" class="btn btn-default"
                 >Trimite
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -27,6 +27,11 @@
         function clicked_on() {
             document.getElementById('suma').innerHTML = '0';
         }
+
+        function disablePopup(buton) {
+            $(buton).attr('data-target', "");
+            $(buton).attr('data-dismiss', "");
+        }
     </script>
 
 </head>
@@ -146,7 +151,7 @@
                     Anulare
                 </button>
             </div>
-            <div class="modal-footer">
+            <div id="close" class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -196,7 +201,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button onclick="toastr.info('E-mail trimis cu succes!')" type="button" class="btn btn-default"
+                <button onclick="toastr.info('E-mail trimis cu succes!')"
+                        data-dismiss="modal" type="button" class="btn btn-default"
                 >Trimite
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
