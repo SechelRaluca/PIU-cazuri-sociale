@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Donează pentru un caz</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>	  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+		  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
+	 <script src="../js/atelier.js"></script>
+</head>
+
+<body id="#homepage">
+<!--<div th:include="fragments/header :: header"></div>-->
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html">Acasă</a></li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Implică-te!<span
+                            class="caret"></span></a>
+                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-toggle"
+								   href="#">Donează<span
+								   class="caret"></span></a>
+								<ul class="dropdown-submenu">
+								    <li><a href="#">Donează online</a></li>
+									<li><a href="directioneaza2%.html">Donează 2%</a></li>
+									<li><a href="#">Donează bunuri</a></li>
+									<li><a href="actioneaza.html">Donează pentru un caz</a></li>								
+								</ul>
+							</li>
+                            <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
+                            <li><a href="#">Participă la eveniment</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Ce facem?<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Despre noi</a></li>
+                            <li><a href="#">Cazuri recent rezolvate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Atelier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../fragments/login.html">Intră</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 	End of Application NAVBAR -->
+
+</div>
+
+<div>
+	<div id="titleProduse">Atelier<br>
+	</div>
+	<div class="shoppingCart" id="shoppingCartDiv">
+		<img src="../images/shoppingCart.png" width="25px" height="25px"></img>
+		<label for="shoppingCartBadge" id="shoppingCartBadgeLabel" class="shoppingCartBadge">0</label>
+	</div>
+	<div id="containerProduse">
+		<div class="leftProduse">
+			<div id="band" class="container text-center rightAdjust">
+				<h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+			</div>
+
+			<div class="leftInnerProduse">
+				<img src="../images/caz2.jpg" width="200px" height="140px">
+				<p>Educaţie</p>
+
+				<img src="../images/caz3.jpg" width="200px" height="140px">
+				<p>Suport</p>
+
+				<img src="../images/caz1.jpg" width="200px" height="140px">
+				<p>Sănătate</p>
+			</div>
+		</div>
+		<div id="listProduse">
+			<section id="sectionProdus">
+				<p class="center"> 
+					<img class="imgProduse" src="../images/produs1.jpg">
+				</p>
+				<p class="center" class="paragraphAdjust">Cutie pentru bijuterii</p>
+				<p id="cantitateProdus0" class="center" class="paragraphAdjust">Cantitate: 10 
+					<input type="number" min="1" class="form-control inputCantitate" id="cantitateIntrodusa0" placeholder="Cantitate dorita"> 
+				</p>
+				<p class="center" class="paragraphAdjust">Pret: 30 lei
+					<button id="cumpara1" name="0" type="button" class="btn btn-primary btn-lg btn-success adaugaInCosButton"
+						onclick="adaugareProdusInCos(event)" >Adaugă în coș</button>		
+				</p>
+			</section>
+			<section id="sectionProdus">
+				<p class="center"> 
+					<img class="imgProduse" src="../images/produs2.jpg">
+				</p>
+				<p class="center" class="paragraphAdjust">Păpușă</p>
+				<p id="cantitateProdus1" class="center" class="paragraphAdjust">Cantitate: 18 
+					<input type="number" min="1" class="form-control inputCantitate" id="cantitateIntrodusa1" placeholder="Cantitate dorita"> 
+				</p>
+				<p class="center" class="paragraphAdjust">Pret: 25 lei
+				<button id="cumpara2" name="1"  type="button" class="btn btn-primary btn-lg btn-success adaugaInCosButton"
+						onclick="adaugareProdusInCos(event)" >Adaugă în coș</button>
+			</section>
+			
+			<section id="sectionProdus">
+				<p class="center"> 
+					<img class="imgProduse" src="../images/produs3.jpg">
+				</p>
+				<p class="center" class="paragraphAdjust">Minioni</p>
+				<p id="cantitateProdus2" class="center" class="paragraphAdjust">Cantitate: 16
+					<input type="number" min="1" class="form-control inputCantitate" id="cantitateIntrodusa2" placeholder="Cantitate dorita"> 
+				</p>
+				<p class="center" class="paragraphAdjust">Pret: 20 lei
+				<button id="cumpara3" name="2" type="button" class="btn btn-primary btn-lg btn-success adaugaInCosButton"
+						onclick="adaugareProdusInCos(event)" >Adaugă în coș</button>
+			</section>
+			
+			<section id="sectionProdus">
+				<p class="center"> 
+					<img class="imgProduse" src="../images/produs4.jpg">
+				</p>
+				<p class="center" class="paragraphAdjust">Ceainic</p>
+				<p id="cantitateProdus3" class="center" class="paragraphAdjust">Cantitate: 15 
+					<input type="number" min="1" class="form-control inputCantitate" id="cantitateIntrodusa3" placeholder="Cantitate dorita" > 
+				</p>
+				<p class="center" class="paragraphAdjust">Pret: 18 lei
+				<button id="cumpara4" name="3" type="button" class="btn btn-primary btn-lg btn-success adaugaInCosButton"
+						onclick="adaugareProdusInCos(event)" >Adaugă în coș</button>
+			</section>
+			
+			<section id="sectionProdus">
+				<p class="center"> 
+					<img class="imgProduse" src="../images/produs5.jpg">
+				</p>
+				<p class="center" class="paragraphAdjust">Colier</p>
+				<p id="cantitateProdus4" class="center" class="paragraphAdjust">Cantitate: 20 
+					<input type="number" min="1" class="form-control inputCantitate" id="cantitateIntrodusa4" placeholder="Cantitate dorita"> 
+				</p>
+				<p class="center" class="paragraphAdjust">Pret: 35 lei
+				<button id="cumpara5" name="4" type="button" class="btn btn-primary btn-lg btn-success adaugaInCosButton"
+						onclick="adaugareProdusInCos(event)" >Adaugă în coș</button>
+			</section>
+			
+			<section id="sectionProdus">
+				<p class="center"> 
+					<img class="imgProduse" src="../images/produs6.png">
+				</p>
+				<p class="center" class="paragraphAdjust">Eșarfă</p>
+				<p id="cantitateProdus5" class="center" class="paragraphAdjust">Cantitate: 15
+					<input type="number" min="1" class="form-control inputCantitate" id="cantitateIntrodusa5" placeholder="Cantitate dorita"> 
+				</p>
+				<p class="center" class="paragraphAdjust">Pret: 30 lei
+				<button id="cumpara6" name="5" type="button" class="btn btn-primary btn-lg btn-success adaugaInCosButton"
+						onclick="adaugareProdusInCos(event)" >Adaugă în coș</button>
+			</section>
+			
+			<nav aria-label="Page navigation example" id="navPaging">
+				  <ul class="pagination">
+					<li class="page-item">
+					  <a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Previous</span>
+					  </a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+					  <a class="page-link" href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						<span class="sr-only">Next</span>
+					  </a>
+					</li>
+				  </ul>
+			</nav>				
+	
+			<hr id="line">
+		</div>						
+	</div>
+</div>
+
+<div class="clear"></div>
+	
+<div id="footerProduse">
+		<p class="footerEvenimente">Poţi să ajuţi!
+		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+				data-toggle="modal" onclick="window.location = 'doneaza.html'">Donează</button>
+		
+		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+				data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!</button>
+		</p>
+		<p class="footerEvenimente">
+		Contactează-ne:
+		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+				data-toggle="modal" onclick="window.location = 'contact.html'">Contact</button>
+		</p>
+</div>
+
+<div id="modalAdaugăProdus" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalAdaugaProdusTitleHeader">Produs adăugat cu succes în coș!</h4>
+
+            </div>
+            <div class="modal-body">
+                <h2>Doriți finalizarea comenzii?</h2>
+            </div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" id="buttonFinalizareComanda" class="btn btn-primary" onclick="finalizareComanda()">Finalizează comanda</button>
+			</div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalAfisareCos" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalAdaugaProdusTitleHeader">Produsele din coș:</h4>
+
+            </div>
+            <div class="modal-body">
+                 <table id="tabelProduse" class="table table-bordered">
+					  <thead>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <td>Produs</td>
+						  <td>Nume</td>
+						  <td>Pret</td>
+						  <td>Cantitate</td>
+						  <td>Total</td>
+						</tr>
+					  </tbody>
+				</table>
+				
+				<form >
+					  <div class="form-group">
+						<label for="nume" class="form-control-label">Nume:</label>
+						<input type="text" class="form-control inputShoppingCart" id="nume" onblur="validareNume()" required  >
+					  </div>  
+					  
+					  <div class="form-group">
+						<label for="telefon" class="form-control-label">Telefon:</label>
+						<input type="text" class="form-control inputShoppingCart" id="telefon" onblur="validareTelefon()"  required="required" pattern="[0-9]{10}">
+					  </div> 
+			
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" id="buttonConfComanda" class="btn btn-primary" onclick="confirmareComanda()">Confirmă comanda</button>
+				      </div>				
+				</form>
+            </div>
+	
+        </div>
+    </div>
+</div>
+
+
+<div id="modalPlata" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalAdaugaProdusTitleHeader">Card bancar:</h4>
+            </div>
+            <div class="modal-body">
+			
+				<form >
+					  <div class="form-group">
+						<label for="tipCard" class="form-control-label">Tip card:</label>
+						<select id="tipCard" class="form-control inputPlata">
+							<option value="mastercard">Mastercard</option>
+							<option value="maestro">Maestro</option>
+							<option value="visa">Visa</option>
+							<option value="visaElectron">Visa Electron</option>
+						</select>
+					  </div>  
+					  
+					  <div class="form-group">
+						<label for="numarCard" class="form-control-label">Număr card:</label>
+						<input type="text" class="form-control inputPlata" id="numarCard" onblur="" autocomplete="off" placeholder="####-####-####-####" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"required="required" onkeydown="validateCardNumber(event)">
+					  </div>
+			
+					  <div class="form-group">
+						<label for="dataExpirare" class="form-control-label">Data expirare:</label>
+						<input type="date" class="form-control inputPlata" id="dataExpirare" onblur=""  required="required">
+					  </div> 
+					  
+					   <div class="form-group">
+						<label for="numarVerificareCard" class="form-control-label">Număr verificare card:</label>
+						<input type="text" class="form-control inputPlata" id="numarVerificareCard" onblur="" autocomplete="off" placeholder="###" pattern="[0-9]{3}" required="required" onkeydown="validateCVC(event)">
+					  </div>
+			
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" id="buttonPlataComanda" class="btn btn-primary" onclick="platesteComanda()">Plătește</button>
+				      </div>				
+				</form>		
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+
+</body>
+</html>
