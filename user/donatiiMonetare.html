@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Donatii monetare</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="../js/actioneaza.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+
+</head>
+
+<body id="#homepage">
+<!--<div th:include="fragments/header :: header"></div>-->
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html">Acasă</a></li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Implică-te!<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="donatiiMonetare.html">Doneaza online</a></li>
+                                    <li><a href="directioneaza2%25.html">Donează 2%</a></li>
+                                    <li><a href="#">Donează bunuri</a></li>
+                                    <li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
+                            <li><a href="#">Participă la eveniment</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Ce facem?<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Despre noi</a></li>
+                            <li><a href="#">Cazuri recent rezolvate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Atelier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../fragments/login.html">Intră</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 	End of Application NAVBAR -->
+
+</div>
+
+<div>
+    <div>
+        <div id="fixed">Donează online<br>
+            <br>
+            <h3>Ia parte la povestea noastră!</h3>
+        </div>
+        <div id="list">
+
+            <p>
+                Donația ta ne va ajuta să mărim numarul personaelor ajutate, să oferim
+                mese hranitoare acestora, să cumparam haine, produse alimentare sau jocuri
+                educative pentru copii, să oferim celor mici experiențe care să îi
+                ajute să crească frumos și să își lărgească orizontul de cunoaștere și
+                experiența: vizite la muzee sau la teatru,
+                excursii și tabere.
+                Ca donator, ai puterea să schimbi în bine viata
+                unei peroane nu la fel de norocoasă, prea obișnuită cu lipsurile – iar
+                efectele implicării
+                tale vor conta atât în prezent, cât și în viitor. Atunci când donezi,
+                devii parte din povestea unei vieți.</p>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg btn-success"
+                    data-toggle="modal" data-target="#donateModal1">Donează!
+            </button>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>
+                Sau prin transfer bancar:<br>
+
+                În RON: RO 67 RZBR 0000 0600 0510 0708<br>
+
+                În EUR: RO 72 RZBR 0000 0600 0805 8342<br>
+
+                În USD: RO 97 RZBR 0000 0600 0520 4928<br>
+            </p>
+            <br>
+            <br>
+            <hr id="line">
+
+            <section id="sectionAdjust" class="helpSection">
+                <p class="footerEvenimente">Poţi să ajuţi!
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'directioneaza2%25.html'">Donează 2%
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
+                    </button>
+                </p>
+                <p class="footerEvenimente">
+                    Contactează-ne:
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'contact.html'">Contact
+                    </button>
+                </p>
+            </section>
+        </div>
+
+    </div>
+
+
+    <div class="fit">
+        <div id="band" class="container text-center adjust">
+            <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+        </div>
+
+        <div class="fit1">
+            <img src="../images/caz2.jpg" width="200px" height="140px">
+            <p>Educaţie</p>
+
+            <img src="../images/caz3.jpg" width="200px" height="140px">
+            <p>Suport</p>
+
+            <img src="../images/caz1.jpg" width="200px" height="140px">
+            <p>Sănătate</p>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="donateModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1');"
+                        type="button" class="close" data-dismiss="modal">&times;
+                </button>
+                <h4 class="modal-title">Donează online!</h4>
+            </div>
+            <div class="modal-body" style="color: black; overflow: auto;">
+                <label class="paragraphAdjust helpSection">Vreau să donez:</label><br>
+                <input id="monthly1" type="radio" name="frequency" value="monthly"> Lunar<br>
+                <input id="oneTime1" type="radio" name="frequency" value="oneTime"> O singură dată<br>
+                <label class="paragraphAdjust helpSection">Suma:</label><br>
+                <input id="sumCase1" onblur="validateSum('sumCase1')" type="number" autocomplete="off"
+                       placeholder="Introduceţi o sumă..." min="1">
+                <hr style="border-color: #fff; margin: 0 0 0 0;">
+                <label class="paragraphAdjust helpSection">Datele dumneavoastră:</label><br>
+                <!-- <label class="paragraphAdjust formSection">Numele:</label> -->
+                <input id="lastName1" onblur="validateLastName('lastName1')" type="text" autocomplete="off"
+                       placeholder="Introduceţi numele..."><br>
+                <!-- <label class="paragraphAdjust formSection">Prenumele:</label> -->
+                <input id="firstName1" onblur="validateFirstName('firstName1')" type="text" autocomplete="off"
+                       placeholder="Introduceţi prenumele..."><br>
+                <!-- <label class="paragraphAdjust formSection">Telefon:</label> -->
+                <input id="phoneNumber1" onblur="validatePhoneNumber('phoneNumber1')" type="text" autocomplete="off"
+                       placeholder="Introduceţi telefonul..."><br>
+                <!-- <label class="paragraphAdjust formSection">Email:</label> -->
+                <input id="email1" onblur="validateEmail('email1')" type="text" autocomplete="off"
+                       placeholder="Introduceţi email-ul..."><br>
+                <br>
+                <button id="donate1"
+                        onclick="donate('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1', '#donate1', '#payModal1');"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-toggle="modal">
+                    Donează
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="payModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); resetFieldsCardPopup('cardNumber1', 'expirationDate1', 'cardVerificationNumber1');"
+                        type="button" class="close" data-dismiss="modal">&times;
+                </button>
+                <h4 class="modal-title">Detalii card bancar</h4>
+            </div>
+            <div class="modal-body" style="color: black; overflow: auto;">
+                <label class="paragraphAdjust helpSection">Tip card:</label>
+                <select id="card1">
+                    <option value="mastercard">Mastercard</option>
+                    <option value="maestro">Maestro</option>
+                    <option value="visa">Visa</option>
+                    <option value="visaElectron">Visa Electron</option>
+                </select>
+                <br>
+                <label class="paragraphAdjust formSection">Număr card:</label><br>
+                <input id="cardNumber1" onblur="validateCardNumber('cardNumber1')" type="text" autocomplete="off"
+                       placeholder="nnnn nnnn nnnn nnnn"><br>
+                <label class="paragraphAdjust formSection">Data expirării:</label><br>
+                <input id="expirationDate1" onblur="isValid('expirationDate1')" type="date" class="form-control"
+                       name="expirationDate"
+                       th:required="required"/>
+                <label class="paragraphAdjust formSection">Număr verificare card:</label><br>
+                <input id="cardVerificationNumber1" onblur="validateCardVerificationNumber('cardVerificationNumber1')"
+                       type="text" autocomplete="off" placeholder="nnn"><br>
+                <br>
+                <button id="pay1"
+                        onclick="pay('cardNumber1', 'expirationDate1', 'cardVerificationNumber1', '#pay1'); resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); disablePopup('#payModal1');"
+                        type="button" class="btn btn-primary btn-lg btn-success"
+                        data-toggle="modal">
+                    Plăteşte
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
