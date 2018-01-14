@@ -16,6 +16,7 @@
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
 	<script src="../js/creareInscriereEveniment.js"></script>	
+	<script src="../js/adaugaCazSocial.js"></script>
 	
     <script src="../js/bootstrap.min.js"
             th:src="@{~/js/bootstrap.min.js}"></script>
@@ -103,7 +104,7 @@
 
 <div id="band" class="container text-center">
     <button type="button" class="btn btn-primary btn-lg btn-success"
-            data-toggle="modal" data-target="#myModalTest">Adaugă caz social
+            data-toggle="modal" data-target="#modalAdaugaCazSocial">Adaugă caz social
     </button>
 
     <button type="button" class="btn btn-primary btn-lg btn-success"
@@ -205,7 +206,39 @@
 		  
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="submit" id="buttonCreareEveniment" class="btn btn-primary" onclick="creareEveniment()";>Crează eveniment</button>
+				<button type="submit" id="buttonCreareEveniment" class="btn btn-primary" onclick="creareEveniment()">Crează eveniment</button>
+			</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAdaugaCazSocial" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalAdaugaCazSocialTitleHeader">Adaugă caz social</h4>
+
+      </div>
+      <div class="modal-body">
+        <form >
+			<div class="form-group">
+				<label for="numeCazSocial"form-control-label">Nume caz social:</label>
+				<input type="text" class="form-control" id="numeCazSocial" autocomplete="off" required  >
+			</div>
+
+ 			<div class="form-group">
+				<label for="detaliiCazSocial" class="form-control-label">Detalii:</label>
+				<textarea class="form-control" id="detaliiCazSocial" required></textarea>
+			</div>		
+			
+		  
+			<div class="modal-footer">
+				<button type="submit" id="buttonAdaugaCazSocial" class="btn btn-primary" onclick="adaugaCazSocial()">Adaugă caz social</button>
 			</div>
         </form>
       </div>
