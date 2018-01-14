@@ -326,7 +326,7 @@ p.footerEvenimente {
     color: black;
     font-weight: bold;
     font-size: 20px;
-    width:500px;
+    width: 500px;
     margin-left: 35px;
 }
 
@@ -689,4 +689,8 @@ input#searchButton:focus {
     left: 35px;
     overflow: auto;
 
+}
+
+.bullet ul li {
+    list-style-type: circle;
 }
