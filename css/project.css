@@ -198,7 +198,7 @@ div section p {
 .read-more {
     font-weight: bold;
     margin-top: 50px;
-	color: black;
+    color: black;
 }
 
 div section h3 {
@@ -271,7 +271,7 @@ div section h3 {
     float: right;
     width: 50%;
     padding-left: 65px;
-    border-left: 1px solid #2d2d30;
+    border-left: 1px solid #ccc;
 }
 
 .adjust {
@@ -283,148 +283,148 @@ div section h3 {
     width: 67.5%;
 }
 
-
 .rightEvenimente {
-	float: right;
-	width: 25%;
-	position: relative;
-	left: 35px;
-	top: -21px;
+    float: right;
+    width: 25%;
+    position: relative;
+    left: 35px;
+    top: -21px;
 }
 
 .rightInnerEvenimente {
-	float: right;
-	width: 100%;
-	padding-left: 65px;
+    float: right;
+    width: 100%;
+    padding-left: 65px;
 }
 
 .rightAdjust {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	padding-top: 60px;
-	padding-left: 60px;
-	margin-right: 0px;
-	width: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 60px;
+    padding-left: 60px;
+    margin-right: 0px;
+    width: 100%;
 }
 
 .clear {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 #footerEvenimente {
-	position: relative;
-	top: 100px;
+    width: 80%;
+    position: relative;
+    top: 100px;
+
 }
 
 p.footerEvenimente {
-	color: black;
-	font-weight: bold;
-	font-size: 20px;
-	margin-left: 35px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: 500px;
+    margin-left: 35px;
 }
 
 button.footerEvenimente {
-	padding: 0 0 0 0;
-	width: 120px;
+    padding: 0 0 0 0;
+    width: 120px;
 }
 
-
 #sectionEveniment {
-	width: 49%;
-	height: 400px;
+    width: 49%;
+    height: 400px;
 }
 
 #navPaging {
-	text-align: center;
+    text-align: center;
 }
 
 p.center {
-	text-align: center;
-	width: 100%;
-	height: auto;
-	padding: 0px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 0px;
 }
 
 img.center {
-	text-align: center;
-	width: 100%;
+    text-align: center;
+    width: 100%;
 }
 
-
 .rightEvenimente {
-	float: right;
-	width: 25%;
-	position: relative;
-	left: 35px;
-	top: -21px;
+    float: right;
+    width: 25%;
+    position: relative;
+    left: 35px;
+    top: -21px;
 }
 
 .rightInnerEvenimente {
-	float: right;
-	width: 100%;
-	padding-left: 65px;
+    float: right;
+    width: 100%;
+    padding-left: 65px;
 }
 
 .rightAdjust {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	padding-top: 60px;
-	padding-left: 60px;
-	margin-right: 0px;
-	width: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 60px;
+    padding-left: 60px;
+    margin-right: 0px;
+    width: 100%;
 }
 
 .clear {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 #footerEvenimente {
-	position: relative;
-	top: 100px;
+    position: relative;
+    top: 100px;
 }
 
 p.footerEvenimente {
-	color: black;
-	font-weight: bold;
-	font-size: 20px;
-	margin-left: 35px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 35px;
+    font-family: "Times New Roman", Times, serif;
 }
 
 button.footerEvenimente {
-	padding: 0 0 0 0;
-	width: 120px;
+    padding: 0 0 0 0;
+    width: 120px;
 }
 
-
 #sectionEveniment {
-	width: 49%;
-	height: 400px;
+    width: 49%;
+    height: 400px;
 }
 
 #navPaging {
-	text-align: center;
+    text-align: center;
 }
 
 p.center {
-	text-align: center;
-	width: 100%;
-	height: auto;
-	padding: 0px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 0px;
 }
 
 img.center {
-	text-align: center;
-	width: 100%;
+    text-align: center;
+    width: 100%;
 }
 
 #fixed {
@@ -434,6 +434,30 @@ img.center {
     color: black;
     font-weight: bold;
     font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#sectionAdjust {
+    width: 500px;
+    height: 250px;
+}
+
+#sectionAdjust1 {
+    width: 970px;
+    /*height: 250px;*/
+    border-top: 1px solid #ccc;
+    overflow-y: auto;
+
+}
+
+#titleEvenimente {
+    position: relative;
+    top: 75px;
+    left: 50px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #sectionAdjust {
@@ -442,26 +466,12 @@ img.center {
 }
 
 #titleEvenimente {
-	position: relative;
-	top: 75px;
-	left: 50px;
-	color: black;
-	font-weight: bold;
-	font-size: 30px;
-}
-
-#sectionAdjust {
-	width: 400px;
-	height: 250px;
-}
-
-#titleEvenimente {
-	position: relative;
-	top: 75px;
-	left: 50px;
-	color: black;
-	font-weight: bold;
-	font-size: 30px;
+    position: relative;
+    top: 75px;
+    left: 50px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 #list {
@@ -470,29 +480,30 @@ img.center {
     bottom: 10px;
     left: 35px;
     overflow: auto;
-    border-top: 1px solid #2d2d30;
+    width: 74.6%;
+    border-top: 1px solid #ccc;
 }
 
 #listEvenimente {
-	position: relative;
-	float: left;  
-	top: 100px;
-	bottom: 10px;
-	left: 35px;
-	width: 75%;
-	overflow:hidden;
-	border-top: 1px solid #2d2d30;
+    position: relative;
+    float: left;
+    top: 100px;
+    bottom: 10px;
+    left: 35px;
+    width: 75%;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
 }
 
 #listEvenimente {
-	position: relative;
-	float: left;  
-	top: 100px;
-	bottom: 10px;
-	left: 35px;
-	width: 75%;
-	overflow:hidden;
-	border-top: 1px solid #2d2d30;
+    position: relative;
+    float: left;
+    top: 100px;
+    bottom: 10px;
+    left: 35px;
+    width: 75%;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
 }
 
 #list::-webkit-scrollbar {
@@ -514,17 +525,17 @@ img.center {
 }
 
 .detailButtonEveniment {
-	float: right;
-	margin-right: 10px;
-	padding: 0 0 0 0;
-	width: 100px;
+    float: right;
+    margin-right: 10px;
+    padding: 0 0 0 0;
+    width: 100px;
 }
 
 .detailButtonEveniment {
-	float: right;
-	margin-right: 10px;
-	padding: 0 0 0 0;
-	width: 100px;
+    float: right;
+    margin-right: 10px;
+    padding: 0 0 0 0;
+    width: 100px;
 }
 
 input#searchButton {
@@ -549,7 +560,7 @@ input#searchButton:focus {
 }
 
 #line {
-    border-color: #2d2d30;
+    border-color: #ccc;
 }
 
 .helpSection {
@@ -640,30 +651,29 @@ input#searchButton:focus {
     right: auto !important;
 }
 
-#closeButton{
-	color:black;
-	float:right;
+#closeButton {
+    color: black;
+    float: right;
 }
 
 .modalFixedHeight {
-	height: 415px;
-	margin-bottom: 10px;
+    height: 415px;
+    margin-bottom: 10px;
 }
-
 
 .modalFixedHeightPadding {
-	height: 415px;
-	position: relative;
-	top: -10px;
+    height: 415px;
+    position: relative;
+    top: -10px;
 }
 
-#imageFormular
-{
-	width:300px;
-	height: 400px;
+#imageFormular {
+    width: 300px;
+    height: 400px;
 }
 
 #footerDirectioneaza2 {
+<<<<<<< HEAD
 	position: relative;
 	top: 20px;
 }
@@ -761,4 +771,32 @@ input#searchButton:focus {
 
 .inputPlata{
 	width: 50%;
+    position: relative;
+    margin-left: 200px;
+    top: 20px;
+}
+
+#donatii {
+    margin-left: inherit;
+}
+
+#list1 {
+    position: fixed;
+    top: 250px;
+    bottom: 10px;
+    left: 35px;
+    overflow: auto;
+
+}
+
+.bullet ul li {
+    list-style-type: circle;
+}
+#BUC
+{
+    color:red;
+}
+#CLUJ
+{
+    color:red;
 }

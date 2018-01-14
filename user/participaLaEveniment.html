@@ -9,8 +9,8 @@
     <link href="http://fonts.googleapis.com/css?family=Lato"
           rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Montserrat"
-          rel="stylesheet" type="text/css"/>	  
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
             href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
             th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
@@ -22,10 +22,21 @@
             th:src="@{~/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" media="screen"
           href="../css/project.css" th:href="@{/css/project.css}"/>
-		  
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
-	 <script src="../js/inscriereLaEveniment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="../js/inscriereLaEveniment.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+
 </head>
 
 <body id="#homepage">
@@ -48,19 +59,18 @@
                            data-toggle="dropdown"
                            href="#">Implică-te!<span
                             class="caret"></span></a>
-                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-toggle"
-								   href="#">Donează<span
-								   class="caret"></span></a>
-								<ul class="dropdown-submenu">
-								    <li><a href="#">Donează online</a></li>
-									<li><a href="directioneaza2%.html">Donează 2%</a></li>
-									<li><a href="#">Donează bunuri</a></li>
-									<li><a href="actioneaza.html">Donează pentru un caz</a></li>								
-								</ul>
-							</li>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="donatiiMonetare.html">Doneaza online</a></li>
+                                    <li><a href="directioneaza2%25.html">Donează 2%</a></li>
+                                    <li><a href="donatiiBunuri.html">Donează bunuri</a></li>
+                                    <li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
+                                </ul>
+                            </li>
                             <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
-                            <li><a href="#">Participă la eveniment</a></li>
+                            <li><a href="participaLaEveniment.html">Participă la eveniment</a></li>
                         </ul>
                     </li>
                     <li><a class="dropdown-toggle"
@@ -68,12 +78,12 @@
                            href="#">Ce facem?<span
                             class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Despre noi</a></li>
-                            <li><a href="#">Cazuri recent rezolvate</a></li>
+                            <li><a href="despreNoi.html">Despre noi</a></li>
+                            <li><a href="cazuriRezolvate.html">Cazuri recent rezolvate</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Atelier</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="../fragments/login.html">Intră</a></li>
                 </ul>
             </div>
@@ -84,90 +94,101 @@
 </div>
 
 <div>
-	<div id="titleEvenimente">Participă la un eveniment<br>
-		<input id="searchButton" type="search" name="search" placeholder="Caută...">
-	</div>
-	<div id="containerEvenimente">
-		<div class="rightEvenimente">
-			<div id="band" class="container text-center rightAdjust">
-				<h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
-			</div>
+    <div id="titleEvenimente">Participă la un eveniment<br>
+        <input id="searchButton" type="search" name="search" placeholder="Caută...">
+    </div>
+    <div id="containerEvenimente">
+        <div class="rightEvenimente">
+            <div id="band" class="container text-center rightAdjust">
+                <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+            </div>
 
-			<div class="rightInnerEvenimente">
-				<img src="../images/caz2.jpg" width="200px" height="140px">
-				<p>Educaţie</p>
+            <div class="rightInnerEvenimente">
+                <img src="../images/caz2.jpg" width="200px" height="140px">
+                <p>Educaţie</p>
 
-				<img src="../images/caz3.jpg" width="200px" height="140px">
-				<p>Suport</p>
+                <img src="../images/caz3.jpg" width="200px" height="140px">
+                <p>Suport</p>
 
-				<img src="../images/caz1.jpg" width="200px" height="140px">
-				<p>Sănătate</p>
-			</div>
-		</div>
-		<div id="listEvenimente">
-			<section id="sectionEveniment">
-				<img class="center" src="../images/eveniment1.jpg">
-				<p class="center" class="paragraphAdjust">Eveniment 1</p>
-				<button id="buttonMaiMult1" name="0" data-whatever="0" type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
-						data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)" >Mai mult</button>
-			</section>
-			<section id="sectionEveniment">
-				<img class="center" src="../images/eveniment2.jpg">
-				<p class="center" class="paragraphAdjust">Eveniment 2</p>
-				<button id="buttonMaiMult2" name="1" data-whatever="1" type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
-						data-toggle="modal" data-target="#modalParticipaLaEveniment"onclick="fillModalData(event)" >Mai mult</button>
-			</section>
-			
-			<section id="sectionEveniment">
-				<img class="center" src="../images/eveniment3.png">
-				<p class="center" class="paragraphAdjust">Eveniment 3</p>
-				<button id="buttonMaiMult3" name="2" data-whatever="2" type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
-						data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)" >Mai mult</button>
-			</section>
-			
-			<nav aria-label="Page navigation example" id="navPaging">
-				  <ul class="pagination">
-					<li class="page-item">
-					  <a class="page-link" href="#" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-						<span class="sr-only">Previous</span>
-					  </a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-					  <a class="page-link" href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-						<span class="sr-only">Next</span>
-					  </a>
-					</li>
-				  </ul>
-			</nav>				
-	
-			<hr id="line">
-		</div>
-			
-			
-			
-	</div>
+                <img src="../images/caz1.jpg" width="200px" height="140px">
+                <p>Sănătate</p>
+            </div>
+        </div>
+        <div id="listEvenimente">
+            <section id="sectionEveniment">
+                <img class="center" src="../images/eveniment1.jpg">
+                <p class="center" class="paragraphAdjust">Eveniment 1</p>
+                <button id="buttonMaiMult1" name="0" data-whatever="0" type="button"
+                        class="btn btn-primary btn-lg btn-success detailButtonEveniment"
+                        data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)">Mai
+                    mult
+                </button>
+            </section>
+            <section id="sectionEveniment">
+                <img class="center" src="../images/eveniment2.jpg">
+                <p class="center" class="paragraphAdjust">Eveniment 2</p>
+                <button id="buttonMaiMult2" name="1" data-whatever="1" type="button"
+                        class="btn btn-primary btn-lg btn-success detailButtonEveniment"
+                        data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)">Mai
+                    mult
+                </button>
+            </section>
+
+            <section id="sectionEveniment">
+                <img class="center" src="../images/eveniment3.png">
+                <p class="center" class="paragraphAdjust">Eveniment 3</p>
+                <button id="buttonMaiMult3" name="2" data-whatever="2" type="button"
+                        class="btn btn-primary btn-lg btn-success detailButtonEveniment"
+                        data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)">Mai
+                    mult
+                </button>
+            </section>
+
+            <nav aria-label="Page navigation example" id="navPaging">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <hr id="line">
+        </div>
+
+
+    </div>
 </div>
 
 <div class="clear"></div>
-	
+
 <div id="footerEvenimente">
-		<p class="footerEvenimente">Poţi să ajuţi!
-		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-				data-toggle="modal" onclick="window.location = 'doneaza.html'">Donează</button>
-		
-		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-				data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!</button>
-		</p>
-		<p class="footerEvenimente">
-		Contactează-ne:
-		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-				data-toggle="modal" onclick="window.location = 'contact.html'">Contact</button>
-		</p>
+    <p class="footerEvenimente">Poţi să ajuţi!
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'doneaza.html'">Donează
+        </button>
+
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
+        </button>
+    </p>
+    <p class="footerEvenimente">
+        Contactează-ne:
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'contact.html'">Contact
+        </button>
+    </p>
 </div>
 
 <div id="modalParticipaLaEveniment" class="modal" role="dialog">
@@ -180,53 +201,63 @@
                 <h4 class="modal-title">Detalii eveniment</h4>
             </div>
             <div class="modal-body">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="modalFixedHeight">
-							<img id="imgModalEveniment" src="../images/caz1.jpg" width="200px" height="150px">
-							
-							<p id="dataEvenimentInfo"></p>
-							<p id="oraEvenimentInfo"></p>
-							<p id="locatieEvenimentInfo"></p>
-							<p id="numarPersoaneEvenimentInfo"></p>
-							<p id="transportEvenimentInfo"></p>
-							<p id="informatiiEvenimentInfo"></p>
-						</div>
-						<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="modalFixedHeightPadding">
-							<h3> Înscrie-te: </h3>
-							<form >
-							  <div class="form-group">
-								<label for="numeParticipant" class="form-control-label">Nume participant:</label>
-								<input type="text" class="form-control" id="numeParticipant" onblur="validareNumeParticipant()" onkeydown="validareNumeParticipant()" required  >
-							  </div>  
-							  
-							  <div class="form-group">
-								<label for="prenumeParticipant" class="form-control-label">Prenume participant:</label>
-								<input type="text" class="form-control" id="prenumeParticipant" onblur="validarePrenumeParticipant()" onkeydown="validarePrenumeParticipant()" required  >
-							  </div> 
-		 
-							  <div class="form-group">
-								<label for="telefonParticipant" class="form-control-label">Telefon participant:</label>
-								<input type="number" min="1" class="form-control" id="telefonParticipant" onblur="validareTelefonParticipant()"  required="required">
-							  </div> 
-							 
-							  <div class="form-group">
-								<label for="informatiiAjutorEveniment" class="form-control-label">Cum poți ajuta?:</label>
-								<textarea class="form-control" id="informatiiAjutorEveniment"></textarea>
-							  </div>
-						</div>
-								<div class="modal-footer">
-									<button type="submit" id="buttonParticipaEveniment" class="btn btn-primary" onclick="inscriereEveniment()";>Înscrie-te</button>
-								</div>
-							</form>
-						
-					</div>
-				</div>				
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="modalFixedHeight">
+                            <img id="imgModalEveniment" src="../images/caz1.jpg" width="200px" height="150px">
+
+                            <p id="dataEvenimentInfo"></p>
+                            <p id="oraEvenimentInfo"></p>
+                            <p id="locatieEvenimentInfo"></p>
+                            <p id="numarPersoaneEvenimentInfo"></p>
+                            <p id="transportEvenimentInfo"></p>
+                            <p id="informatiiEvenimentInfo"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="modalFixedHeightPadding">
+                            <h3> Înscrie-te: </h3>
+                            <form>
+                                <div class="form-group">
+                                    <label for="numeParticipant" class="form-control-label">Nume participant:</label>
+                                    <input type="text" class="form-control" id="numeParticipant"
+                                           onblur="validareNumeParticipant()" onkeydown="validareNumeParticipant()"
+                                           required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="prenumeParticipant" class="form-control-label">Prenume
+                                        participant:</label>
+                                    <input type="text" class="form-control" id="prenumeParticipant"
+                                           onblur="validarePrenumeParticipant()"
+                                           onkeydown="validarePrenumeParticipant()" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefonParticipant" class="form-control-label">Telefon
+                                        participant:</label>
+                                    <input type="number" min="1" class="form-control" id="telefonParticipant"
+                                           onblur="validareTelefonParticipant()" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="informatiiAjutorEveniment" class="form-control-label">Cum poți
+                                        ajuta?:</label>
+                                    <textarea class="form-control" id="informatiiAjutorEveniment"></textarea>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id="buttonParticipaEveniment" class="btn btn-primary"
+                                    onclick="inscriereEveniment()" ;>Înscrie-te
+                            </button>
+                        </div>
+                        </form>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
