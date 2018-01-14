@@ -283,6 +283,78 @@ div section h3 {
     width: 67.5%;
 }
 
+
+.rightEvenimente {
+	float: right;
+	width: 25%;
+	position: relative;
+	left: 35px;
+	top: -21px;
+}
+
+.rightInnerEvenimente {
+	float: right;
+	width: 100%;
+	padding-left: 65px;
+}
+
+.rightAdjust {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 60px;
+	padding-left: 60px;
+	margin-right: 0px;
+	width: 100%;
+}
+
+.clear {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+#footerEvenimente {
+	position: relative;
+	top: 100px;
+}
+
+p.footerEvenimente {
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 35px;
+}
+
+button.footerEvenimente {
+	padding: 0 0 0 0;
+	width: 120px;
+}
+
+
+#sectionEveniment {
+	width: 49%;
+	height: 400px;
+}
+
+#navPaging {
+	text-align: center;
+}
+
+p.center {
+	text-align: center;
+	width: 100%;
+	height: auto;
+	padding: 0px;
+}
+
+img.center {
+	text-align: center;
+	width: 100%;
+}
+
 #fixed {
     position: fixed;
     top: 75px;
@@ -297,6 +369,15 @@ div section h3 {
     height: 250px;
 }
 
+#titleEvenimente {
+	position: relative;
+	top: 75px;
+	left: 50px;
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+}
+
 #list {
     position: fixed;
     top: 250px;
@@ -304,6 +385,17 @@ div section h3 {
     left: 35px;
     overflow: auto;
     border-top: 1px solid #2d2d30;
+}
+
+#listEvenimente {
+	position: relative;
+	float: left;  
+	top: 100px;
+	bottom: 10px;
+	left: 35px;
+	width: 75%;
+	overflow:hidden;
+	border-top: 1px solid #2d2d30;
 }
 
 #list::-webkit-scrollbar {
@@ -322,6 +414,13 @@ div section h3 {
     margin-right: 90px;
     padding: 0 0 0 0;
     width: 100px;
+}
+
+.detailButtonEveniment {
+	float: right;
+	margin-right: 10px;
+	padding: 0 0 0 0;
+	width: 100px;
 }
 
 input#searchButton {
@@ -431,13 +530,25 @@ input#searchButton:focus {
     font-size: 15px;
 }
 
-#closeButton {
-    color: black;
-    float: right;
-}
-
 .sub-dropdown-menu {
     top: 0 !important;
     left: 250px !important;
     right: auto !important;
+}
+
+#closeButton{
+	color:black;
+	float:right;
+}
+
+.modalFixedHeight {
+	height: 415px;
+	margin-bottom: 10px;
+}
+
+
+.modalFixedHeightPadding {
+	height: 415px;
+	position: relative;
+	top: -10px;
 }
