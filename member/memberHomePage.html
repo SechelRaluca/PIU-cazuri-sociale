@@ -229,15 +229,19 @@
         <form >
 			<div class="form-group">
 				<label for="numeCazSocial"form-control-label">Nume caz social:</label>
-				<input type="text" class="form-control" id="numeCazSocial" autocomplete="off" required  >
+				<input type="text" class="form-control" id="numeCazSocial" autocomplete="off" required="required">
 			</div>
 
+			<div class="form-group">
+				<label for="numeCazSocial"form-control-label">Încărcați imaginea cu cazul:</label>
+				<input type="file" id="fileLoader" name="files" title="Browse Image" accept=".jpg, .jpeg, .png"/>
+			</div>			
+			
  			<div class="form-group">
 				<label for="detaliiCazSocial" class="form-control-label">Detalii:</label>
-				<textarea class="form-control" id="detaliiCazSocial" required></textarea>
+				<textarea class="form-control" id="detaliiCazSocial" required="required"></textarea>
 			</div>		
-			
-		  
+				  
 			<div class="modal-footer">
 				<button type="submit" id="buttonAdaugaCazSocial" class="btn btn-primary" onclick="adaugaCazSocial()">Adaugă caz social</button>
 			</div>

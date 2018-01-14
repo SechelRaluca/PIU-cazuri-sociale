@@ -22,6 +22,9 @@
             th:src="@{~/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" media="screen"
           href="../css/project.css" th:href="@{/css/project.css}"/>
+		  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>				  
 </head>
 <body id="#homepage">
 <div th:fragment="header">
@@ -225,12 +228,17 @@
         <form >
 			<div class="form-group">
 				<label for="numeCazSocial"form-control-label">Nume caz social:</label>
-				<input type="text" class="form-control" id="numeCazSocial" autocomplete="off" required  >
+				<input type="text" class="form-control" id="numeCazSocial" autocomplete="off" required="required">
 			</div>
-
+			
+			<div class="form-group">
+				<label for="numeCazSocial"form-control-label">Încărcați imaginea cu cazul:</label>
+				<input type="file" id="fileLoader" name="files" title="Browse Image" accept=".jpg, .jpeg, .png"/>
+			</div>
+			
  			<div class="form-group">
 				<label for="detaliiCazSocial" class="form-control-label">Detalii:</label>
-				<textarea class="form-control" id="detaliiCazSocial" required></textarea>
+				<textarea class="form-control" id="detaliiCazSocial" required="required"></textarea>
 			</div>		
 			
 		  

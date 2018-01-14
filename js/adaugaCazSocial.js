@@ -3,7 +3,9 @@ function adaugaCazSocial() {
 	var detaliiCazSocial = document.getElementById('detaliiCazSocial').value.length;
 	
 	if(numeCazSocial > 0 && detaliiCazSocial > 0){
-		toastr.success('Cazul social a fost adăugat cu succes!');
+		toastr.info('Cazul social a fost adăugat cu succes!');
+		document.getElementById('numeCazSocial').value = "";
+		document.getElementById('detaliiCazSocial').value = "";
 		$('#modalAdaugaCazSocial').modal('hide');
 		return true;
 	}
