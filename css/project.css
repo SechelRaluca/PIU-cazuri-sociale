@@ -673,6 +673,104 @@ input#searchButton:focus {
 }
 
 #footerDirectioneaza2 {
+<<<<<<< HEAD
+	position: relative;
+	top: 20px;
+}
+
+#listProduse {
+	position: relative;
+	float: right;  
+	top: 100px;
+	bottom: 10px;
+	left: -15px;
+	width: 75%;
+	overflow:hidden;
+	border-top: 1px solid #2d2d30;
+}
+
+.leftProduse {
+	float: left;
+	width: 25%;
+	position: relative;
+	top: 20px;
+}
+
+#titleProduse {
+	position: relative;
+	top: 75px;
+	left: 50px;
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.leftInnerProduse {
+	float: right;
+	width: 100%;
+	padding-left: 65px;
+}
+
+#footerProduse {
+	position: relative;
+	top: 100px;
+	left: 330px;
+}
+
+.imgProduse{
+	height:200px;
+	width: 280px;
+	text-align: center;
+}
+
+#sectionProdus {
+	width: 40%;
+	height: 380px;
+	padding-right: 50px;
+	padding-left: 50px;
+	padding-left: 50px;
+}
+
+.shoppingCart {
+	position: fixed;
+	top: 75px;
+	right: 25px;
+	width: 25px;
+	height: 25px;
+	z-index: 10;
+}
+
+.shoppingCartBadge {
+	position: relative;
+	left: -10px;
+	top: -16px;
+	font-size: 10px;
+	width: 22px;
+	height: 18px;
+	color: white;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	background-color: #c67605;
+	padding-left: 8px;
+}
+
+.adaugaInCosButton {
+	margin-left:30px;
+    width: 150px;
+}
+.inputCantitate{
+	width: 150px;
+	display: inline;
+	margin-left: 15px;
+}
+
+.inputShoppingCart{
+	width: 30%;
+}
+
+.inputPlata{
+	width: 50%;
     position: relative;
     margin-left: 200px;
     top: 20px;
