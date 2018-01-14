@@ -1,5 +1,9 @@
-var evenimente = [];
-var nrEvenimente = 0;
+var evenimente = [{numeEveniment:'Eveniment 1',dataEveniment:'02/01/2018',oraEveniment:'12:00',locatieEveniment:'Cluj-Napoca',numarPersoaneEveniment:'10',transportEveniment:'Autocar',informatiiEveniment:'Evenimentul va avea loc pentru ajutarea bătrânilor',poza:"../images/caz1.jpg"}
+/*,
+					{'Eveniment 2','03/12/2018','10:00','Cluj-Napoca','8','Pe jos','Evenimentul va avea loc pentru ajutarea casei de copii',"../images/caz2.jpg"},
+					{'Eveniment 3', '04/08/2018','17:00','Cluj-Napoca','5','Mașina','Evenimentul va avea loc pentru a duce rechizite copiilor',"../images/caz3.jpg"}*/];
+
+					var nrEvenimente = 0;
 
 function creareEveniment()
 {
@@ -31,7 +35,7 @@ function creareEveniment()
 			nrEvenimente ++;
 			 $('#modalAdaugaEveniment').modal('hide');
 			 resetForm();
-			 toastr.info('Eveniment creat cu succes cu succes!');
+			 toastr.info('Eveniment creat cu succes!');
 		}
 		
 }
@@ -179,5 +183,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 e.target.setCustomValidity("Numarul persoanelor trebuie introdus !");
             }
         };
-		
 });
+
