@@ -3,13 +3,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Contact</title>
+    <title>Donează pentru un caz</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://fonts.googleapis.com/css?family=Lato"
           rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Montserrat"
           rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
             href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
             th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
@@ -22,6 +23,10 @@
     <link rel="stylesheet" type="text/css" media="screen"
           href="../css/project.css" th:href="@{/css/project.css}"/>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="../js/doneaza2%.js"></script>
+
     <script>
         $(document).ready(function () {
             $('.dropdown-menu a.test').on("click", function (e) {
@@ -31,12 +36,10 @@
             });
         });
     </script>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
-
 </head>
-<body>
+
+<body id="#homepage">
+<!--<div th:include="fragments/header :: header"></div>-->
 <div th:fragment="header">
     <!-- Application NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -85,29 +88,68 @@
             </div>
         </div>
     </nav>
-    <!-- 	End of Application NAVBAR -->
 
 </div>
 
+<div>
+    <div>
+        <div id="fixed">Donează 2%<br>
+            <br>
+            <h3>Ia parte la povestea noastră!</h3>
+        </div>
+        <div id="list">
+            <h3> Direcționează 2% din impozitul pe venit </h3>
+            <p> Faceți o faptă bună, nu costă nimic!</p>
+            </br>
+            <img class="imageFormular" class="center" src="../images/formularImage.jpg"></br>
 
-<div class="container text-center">
+            </br>
+            Descarcă formularul de <a href="/images/formular2%.pdf" download="formular2%.pdf"> aici </a> și
+            completează-l cu datele necesare.
+            </br>
+            <p> După finalizare, încarcă formularul mai jos:</p>
 
-    <h2>CONTACT</h2>
+            </br>
+            <input type="file" id="fileLoader" name="files" title="Load File" accept=".pdf,.doc, .docs"/>
 
-    <br>
-    <br>
-    <h3>Strada Avram Iancu 80, Cluj-Napoca</h3>
-    <h3>județul Cluj, România</h3>
-    <h3>Popescu Vlad</h3>
-    <h3>Director executiv</h3>
-    <br>
-    <h3>E-mail: asociatiaTeamPIU@gmail.com</h3>
-    <h3>Telefon: Orange : 0742428683 </h3>
-    <h3>Vodafone : 0720243421 </h3>
-    <h3>Telekom : 0781428423</h3>
+            <hr id="line">
 
+            <section id="sectionAdjust" class="helpSection">
+                <p class="footerEvenimente">Poţi să ajuţi!
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'donatiiMonetare.html'">Donează
+                    </button>
 
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
+                    </button>
+                </p>
+                <p class="footerEvenimente">
+                    Contactează-ne:
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'contact.html'">Contact
+                    </button>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <div class="fit">
+        <div id="band" class="container text-center adjust">
+            <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+        </div>
+
+        <div class="fit1">
+            <img src="../images/caz2.jpg" width="200px" height="140px">
+            <p>Educaţie</p>
+
+            <img src="../images/caz3.jpg" width="200px" height="140px">
+            <p>Suport</p>
+
+            <img src="../images/caz1.jpg" width="200px" height="140px">
+            <p>Sănătate</p>
+        </div>
+    </div>
 </div>
-
 </body>
 </html>

@@ -1,5 +1,9 @@
-var evenimente = [];
-var nrEvenimente = 0;
+var evenimente = [{numeEveniment:'Eveniment 1',dataEveniment:'02/01/2018',oraEveniment:'12:00',locatieEveniment:'Cluj-Napoca',numarPersoaneEveniment:'10',transportEveniment:'Autocar',informatiiEveniment:'Evenimentul va avea loc pentru ajutarea bătrânilor',poza:"../images/caz1.jpg"}
+/*,
+					{'Eveniment 2','03/12/2018','10:00','Cluj-Napoca','8','Pe jos','Evenimentul va avea loc pentru ajutarea casei de copii',"../images/caz2.jpg"},
+					{'Eveniment 3', '04/08/2018','17:00','Cluj-Napoca','5','Mașina','Evenimentul va avea loc pentru a duce rechizite copiilor',"../images/caz3.jpg"}*/];
+
+					var nrEvenimente = 0;
 
 function creareEveniment()
 {
@@ -31,7 +35,7 @@ function creareEveniment()
 			nrEvenimente ++;
 			 $('#modalAdaugaEveniment').modal('hide');
 			 resetForm();
-			 toastr.info('Eveniment creat cu succes cu succes!');
+			 toastr.info('Eveniment creat cu succes!');
 		}
 		
 }
@@ -67,6 +71,7 @@ function validareData()
 	if (data === "")
 	{
 		document.getElementById('dataEveniment').style.borderColor = "red";
+		
 		return false;
 	}
 	
@@ -77,6 +82,7 @@ function validareData()
 	if(varData <= azi) 
 	{
 		document.getElementById('dataEveniment').style.borderColor = "red";
+		
 		return false;
 	}
 	
@@ -116,7 +122,7 @@ function validareNumarPersoane()
 {
 	var nrPersoane = document.getElementById('numarPersoaneEveniment').value;
 	
-	if (nrPersoane === "" || parseInt(nrPersoane)<=0)
+	if (nrPersoane === "")
 	{
 		document.getElementById('numarPersoaneEveniment').style.borderColor = "red";
 		return false;
@@ -140,4 +146,42 @@ function validareTransport()
 	document.getElementById('transportEveniment').style.borderColor = "#d6d6d6";
 	return true;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+	document.getElementById('numeEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Numele trebuie introdus !");
+            }
+        };
+	
+	document.getElementById('dataEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Data trebuie introdusa si trebuie sa fie in viitor!");
+            }
+        };
+		
+	document.getElementById('oraEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Ora trebuie introdusa");
+            }
+        };
+		
+	document.getElementById('locatieEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Locatia trebuie introdusa !");
+            }
+        };
+		
+	document.getElementById('numarPersoaneEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Numarul persoanelor trebuie introdus !");
+            }
+        };
+});
 

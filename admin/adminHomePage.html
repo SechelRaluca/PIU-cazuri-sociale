@@ -15,6 +15,9 @@
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
+	<script src="../js/creareInscriereEveniment.js"></script>	
+	<script src="../js/adaugaCazSocial.js"></script>			
+			
     <script src="../js/bootstrap.min.js"
             th:src="@{~/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" media="screen"
@@ -35,11 +38,12 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="adminHomePage.html">Acasă</a></li>
-                    <li><a href="#">ONG</a></li>
-                    <li><a href="#">Asociații locale</a></li>
+                    <li><a href="ong.html">ONG</a></li>
+                    <li><a href="asociatiiLocale.html">Asociații locale</a></li>
                     <li><a href="generareRaporturi.html">Generare raporturi</a></li>
                     <li><a href="adaugareMembru.html">Adaugă membru</a></li>
                     <li><a href="gestiuneMonetara.html">Gestiune monetară</a></li>
+					<li><a href="../index.html">Ieșire</a></li>
                 </ul>
             </div>
         </div>
@@ -97,11 +101,11 @@
 
 <div id="band" class="container text-center">
     <button type="button" class="btn btn-primary btn-lg btn-success"
-            data-toggle="modal" data-target="#myModalTest">Adaugă caz social
+            data-toggle="modal" data-target="#modalAdaugaCazSocial">Adaugă caz social
     </button>
 
     <button type="button" class="btn btn-primary btn-lg btn-success"
-            data-toggle="modal" data-target="#myModalTest">Adaugă eveniment
+            data-toggle="modal" data-target="#modalAdaugaEveniment">Adaugă eveniment
     </button>
 
     <br>
@@ -109,7 +113,7 @@
     <br>
     <h3>Ultimele cazuri</h3>
 </div>
-<div>
+<div style="margin-left: 75px;">
     <section>
         <h3>Ajută bătrânii de sărbători!</h3>
         <img src="../images/caz1.jpg">
@@ -118,25 +122,183 @@
             cu ajutorul dvs, sponsorii și donatorii noștri,
             ajută cu alimente zeci de bătrâni săraci, unii singuri
             sau neputincioși.
-        </p>
-        <p class="read-more">Citește mai mult...</p>
+        </p><br>
+ 		<button
+				type="button" class="btn btn-primary btn-lg btn-success"
+				data-toggle="modal" style="margin-left: 75px; color: black; background-color: white; border: 1px solid #ffffff;" data-target="#detailModal2">
+			Citește mai mult...
+		</button>
     </section>
     <section>
         <h3>Ajută copiii orfani să meargă la școală!</h3><img src="../images/caz2.jpg">
         <p>În fiecare an ne implicăm
             în ajutorarea copiilor săraci, care nu au posibilitatea de a merge la școală
             sau sunt în pragul abandonului școlar din cauza lipsei de rechizite.
-        </p>
-        <p class="read-more">Citește mai mult...</p>
+        </p><br>
+ 		<button
+				type="button" class="btn btn-primary btn-lg btn-success"
+				data-toggle="modal" style="margin-left: 75px; color: black; background-color: white; border: 1px solid #ffffff;" data-target="#detailModal1">
+			Citește mai mult...
+		</button>
     </section>
     <section>
         <h3>Fă-le sărbătorile fericite!</h3>
         <img src="../images/caz3.jpg">
         <p>În pragul sărbătorilor, asociația noastră încearcă să îi ajute
             și pe cei mai puțin norocoși să se bucure de această perioadă
-            minunată.</p>
-        <p class="read-more">Citește mai mult...</p>
+            minunată.</p><br>
+ 		<button
+				type="button" class="btn btn-primary btn-lg btn-success"
+				data-toggle="modal" style="margin-left: 75px; color: black; background-color: white; border: 1px solid #ffffff;" data-target="#detailModal2">
+			Citește mai mult...
+		</button>
     </section>
+</div>
+
+<div class="modal fade" id="modalAdaugaEveniment" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalAdaugaEvenimentTitleHeader">Adaugă eveniment</h4>
+
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="form-group">
+            <label for="numeEveniment" class="form-control-label">Nume eveniment:</label>
+            <input type="text" class="form-control" id="numeEveniment" onblur="validareNume()" onkeydown="validareNume()" required  >
+          </div>  
+		   <div class="form-group">
+            <label for="dataEveniment" class="form-control-label" >Dată eveniment:</label>
+            <input type="date" class="form-control" onchange="validareData()" onfocus="validareData()" id="dataEveniment" required="required">
+          </div>
+		   <div class="form-group">
+            <label for="oraEveniment" class="form-control-label" >Oră eveniment:</label>
+            <input type="time" class="form-control" id="oraEveniment" onfocus="validareOra()" onchange="validareOra()" required="required">
+          </div>
+		  <div class="form-group">
+            <label for="locatieEveniment" class="form-control-label" >Locație:</label>
+            <input type="text" class="form-control" id="locatieEveniment" onblur="validareLocatie()" onkeydown="validareLocatie()" required="required">
+          </div>  
+		  <div class="form-group">
+            <label for="numarPersoaneEveniment" class="form-control-label">Număr persoane:</label>
+            <input type="number" min="1" class="form-control" id="numarPersoaneEveniment" onchange="validareNumarPersoane()" required="required">
+          </div> 
+		  <div class="form-group">
+            <label for="transportEveniment" class="form-control-label" >Transport:</label>
+             <select class="form-control" id="transportEveniment"  onblur="validareTransport()" required="required">
+			  <option  value="1">Autocar</option>
+			  <option  value="2">Mașina personală</option>
+			  <option  value="3">Tren</option>
+			  <option  value="4">Pe jos</option>
+			</select>
+		   </div> 
+          <div class="form-group">
+            <label for="informatiiEveniment" class="form-control-label">Informatii:</label>
+            <textarea class="form-control" id="informatiiEveniment"></textarea>
+          </div>
+		  
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" id="buttonCreareEveniment" class="btn btn-primary" onclick="creareEveniment()">Crează eveniment</button>
+			</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalAdaugaCazSocial" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalAdaugaCazSocialTitleHeader">Adaugă caz social</h4>
+
+      </div>
+      <div class="modal-body">
+        <form >
+			<div class="form-group">
+				<label for="numeCazSocial"form-control-label">Nume caz social:</label>
+				<input type="text" class="form-control" id="numeCazSocial" autocomplete="off" required  >
+			</div>
+
+ 			<div class="form-group">
+				<label for="detaliiCazSocial" class="form-control-label">Detalii:</label>
+				<textarea class="form-control" id="detaliiCazSocial" required></textarea>
+			</div>		
+			
+		  
+			<div class="modal-footer">
+				<button type="submit" id="buttonAdaugaCazSocial" class="btn btn-primary" onclick="adaugaCazSocial()">Adaugă caz social</button>
+			</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="detailModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ajută bătrânii de sărbători</h4>
+            </div>
+            <div class="modal-body">
+				<img src="../images/caz1.jpg" width="200px" height="150px">
+				<br><br>
+				<p class="paragraphAdjust">An de an asociația noastră umanitară, cu ajutorul dvs, sponsorii și donatorii noștri, ajută cu alimente zeci de bătrâni săraci, unii singuri sau neputincioși. Aceştia provin în mod special din mediul rural, au pensii foarte mici, şi abia le ajung banii pentru medicamente şi cheltuielile lunare.
+					Pentru că suntem în preajma Sărbătorilor de Iarnă, dorim din nou să venim în ajutorul acestor bătrâni nevoiaşi cu pachete consistente de alimente.</p>
+				<br><br>				
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="detailModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ajută copiii orfani să meargă la școală!</h4>
+            </div>
+            <div class="modal-body">
+				<img src="../images/caz2.jpg" width="200px" height="150px">
+				<br><br>
+				<p class="paragraphAdjust">În fiecare an ne implicăm în ajutorarea copiilor săraci, care nu au posibilitatea de a merge la școală sau sunt în pragul abandonului școlar din cauza lipsei de rechizite. Toţi aceşti copii sunt în pragul abandonului şcolar datorită sărăciei. Fără educaţie, fără o pregătire, o meserie, aceşti copii pot deveni infractorii de mâine. Asociaţia noastră umanitară le asigură an de an cu ajutorul sponsorilor şi donatorilor, toate rechizitele şcolare de care au nesvoie.</p>
+				<br><br>				
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="detailModal3" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Fă-le sărbătorile fericite!</h4>
+            </div>
+            <div class="modal-body">	
+				<img src="../images/caz3.jpg" width="200px" height="150px">
+				<br><br>
+				<p class="paragraphAdjust">În pragul sărbătorilor, asociația noastră încearcă să îi ajute și pe cei mai puțin norocoși să se bucure de această perioadă minunată. Am reuşit să aducem bucuria Crăciunului în casele unor copii care-şi trăiesc viaţa în lipsuri şi sărăcie, muncind cot la cot cu părinţii lor, neputând să se bucure de copilărie! Vă invităm şi anul acesta să le readucem zâmbetele pe chipuri şi bucuria în suflete! Vă invităm din nou să fiţi Moş Crăciun pentru un copil sărac!</p>
+				<br><br>				
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

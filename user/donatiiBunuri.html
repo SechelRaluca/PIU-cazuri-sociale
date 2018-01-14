@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Donatii monetare</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Lato"
+          rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet" type="text/css"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+            rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <script src="../js/bootstrap.min.js"
+            th:src="@{~/js/bootstrap.min.js}"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="../css/project.css" th:href="@{/css/project.css}"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="../js/actioneaza.js"></script>
+</head>
+
+<body id="#homepage">
+<!--<div th:include="fragments/header :: header"></div>-->
+<div th:fragment="header">
+    <!-- Application NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html">Acasă</a></li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Implică-te!<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+                                <ul class="dropdown-menu sub-dropdown-menu ">
+                                    <li><a href="donatiiMonetare.html">Doneaza online</a></li>
+                                    <li><a href="directioneaza2%25.html">Donează 2%</a></li>
+                                    <li><a href="donatiiBunuri.html">Donează bunuri</a></li>
+                                    <li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
+                            <li><a href="participaLaEveniment.html">Participă la eveniment</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">Ce facem?<span
+                            class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Despre noi</a></li>
+                            <li><a href="#">Cazuri recent rezolvate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Atelier</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../fragments/login.html">Intră</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 	End of Application NAVBAR -->
+
+</div>
+
+<div>
+    <div>
+        <div id="fixed">Donează bunuri<br>
+            <br>
+            <h3>Ia parte la povestea noastră!</h3>
+        </div>
+        <div id="list">
+
+            <p>
+                Donează haine, alimente, cărți, obiecte de mobilier și orice altceva ce ție îți prisosește, iar pentru
+                alții poate însemna mult. Ți-au rămas mici hainele de anul trecut? Te-ai mutat și nu știi ce să faci cu
+                toate cărțile care nu mai au loc în bibliotecă? Sigur există cineva care se va bucura de ele!
+
+                <br>
+            <p>Categorii de bunuri:</p>
+            <ul class="bullet">
+                <li>Alimente</li>
+                <li>Haine și îmbrăcăminte</li>
+                <li>Jucării</li>
+                <li>Electronice</li>
+                <li>Mobilă</li>
+                <li>Obiecte gospodărie</li>
+                <li>Cărți/Ziare/Reviste</li>
+                <li>Materiale de construcții</li>
+                <li>Servicii</li>
+            </ul>
+
+            <button type="button" class="btn btn-primary btn-lg btn-success"
+                    data-toggle="modal" data-target="#" onclick="window.location = 'contact.html'">Contact
+            </button>
+
+            <button type="button" class="btn btn-primary btn-lg btn-success"
+                    data-toggle="modal" data-target="#emailModal">Trimite e-mail
+            </button>
+            <br>
+            <br>
+            <hr id="line">
+
+            <section id="sectionAdjust" class="helpSection">
+                <p class="footerEvenimente">Poţi să ajuţi!
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'donatiiMonetare.html'">Donează
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
+                    </button>
+                </p>
+                <p class="footerEvenimente">
+                    Contactează-ne:
+                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                            data-toggle="modal" onclick="window.location = 'contact.html'">Contact
+                    </button>
+                </p>
+            </section>
+        </div>
+
+    </div>
+
+
+    <div class="fit">
+        <div id="band" class="container text-center adjust">
+            <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+        </div>
+
+        <div class="fit1">
+            <img src="../images/caz2.jpg" width="200px" height="140px">
+            <p>Educaţie</p>
+
+            <img src="../images/caz3.jpg" width="200px" height="140px">
+            <p>Suport</p>
+
+            <img src="../images/caz1.jpg" width="200px" height="140px">
+            <p>Sănătate</p>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="emailModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Trimite e-mail</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" id="destContainer">
+                    <label class="control-label col-sm-2">Către:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="dest" name="dest"
+                               autofocus="autofocus"
+                               placeholder="contactBunuri@gmail.com"
+                               th:required="required" class="form-control"/>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group" id="subContainer">
+                    <label class="control-label col-sm-2">Subiect:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="sub" name="sub"
+                               autofocus="autofocus"
+                               placeholder="Donații bunuri"
+                               th:required="required" class="form-control"/>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group" id="msgContainer">
+                    <label class="control-label col-sm-2">Mesaj:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="msg" name="msg"
+                               autofocus="autofocus"
+                               placeholder="..."
+                               th:required="required" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="toastr.info('E-mail trimis cu succes!')"
+                        data-toggle="modal" data-target=""
+                        data-dismiss="modal"
+                        type="button" class="btn btn-default"
+                >Trimite
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
