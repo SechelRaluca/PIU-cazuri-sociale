@@ -25,7 +25,7 @@
 		  
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
-	 <script src="../js/inscriereLaEveniment.js"></script>
+	 <script src="../js/doneaza2%.js"></script>
 </head>
 
 <body id="#homepage">
@@ -79,13 +79,11 @@
             </div>
         </div>
     </nav>
-    <!-- 	End of Application NAVBAR -->
 
 </div>
 
 <div>
-	<div id="titleEvenimente">Participă la un eveniment<br>
-		<input id="searchButton" type="search" name="search" placeholder="Caută...">
+	<div id="titleEvenimente">Direcționează 2%<br>
 	</div>
 	<div id="containerEvenimente">
 		<div class="rightEvenimente">
@@ -105,57 +103,28 @@
 			</div>
 		</div>
 		<div id="listEvenimente">
-			<section id="sectionEveniment">
-				<img class="center" src="../images/eveniment1.jpg">
-				<p class="center" class="paragraphAdjust">Eveniment 1</p>
-				<button id="buttonMaiMult1" name="0" data-whatever="0" type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
-						data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)" >Mai mult</button>
-			</section>
-			<section id="sectionEveniment">
-				<img class="center" src="../images/eveniment2.jpg">
-				<p class="center" class="paragraphAdjust">Eveniment 2</p>
-				<button id="buttonMaiMult2" name="1" data-whatever="1" type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
-						data-toggle="modal" data-target="#modalParticipaLaEveniment"onclick="fillModalData(event)" >Mai mult</button>
-			</section>
-			
-			<section id="sectionEveniment">
-				<img class="center" src="../images/eveniment3.png">
-				<p class="center" class="paragraphAdjust">Eveniment 3</p>
-				<button id="buttonMaiMult3" name="2" data-whatever="2" type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
-						data-toggle="modal" data-target="#modalParticipaLaEveniment" onclick="fillModalData(event)" >Mai mult</button>
-			</section>
-			
-			<nav aria-label="Page navigation example" id="navPaging">
-				  <ul class="pagination">
-					<li class="page-item">
-					  <a class="page-link" href="#" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-						<span class="sr-only">Previous</span>
-					  </a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-					  <a class="page-link" href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-						<span class="sr-only">Next</span>
-					  </a>
-					</li>
-				  </ul>
-			</nav>				
-	
+		
+			<h2> Direcționează 2% din impozitul pe venit </h2>
+			<p> Faceți o faptă bună, nu costă nimic!</p>
+			</br>
+			<img class="imageFormular" class="center" src="../images/formularImage.jpg"></br>
+		
+			</br>	
+			Descarcă formularul de <a href="/images/formular2%.pdf" download="formular2%.pdf" > aici </a> și completează-l cu datele necesare.
+			</br>
+			<p> După finalizare, încarcă formularul mai jos:</p>
+		
+			</br>
+			<input type="file"id="fileLoader" name="files" title="Load File" accept=".pdf,.doc, .docs"  /> 
+				
 			<hr id="line">
-		</div>
-			
-			
-			
+		</div>		
 	</div>
 </div>
 
 <div class="clear"></div>
 	
-<div id="footerEvenimente">
+<div id="footerDirectioneaza2">
 		<p class="footerEvenimente">Poţi să ajuţi!
 		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
 				data-toggle="modal" onclick="window.location = 'doneaza.html'">Donează</button>
@@ -168,68 +137,6 @@
 		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
 				data-toggle="modal" onclick="window.location = 'contact.html'">Contact</button>
 		</p>
-</div>
-
-<div id="modalParticipaLaEveniment" class="modal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Detalii eveniment</h4>
-            </div>
-            <div class="modal-body">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="modalFixedHeight">
-							<img id="imgModalEveniment" src="../images/caz1.jpg" width="200px" height="150px">
-							
-							<p id="dataEvenimentInfo"></p>
-							<p id="oraEvenimentInfo"></p>
-							<p id="locatieEvenimentInfo"></p>
-							<p id="numarPersoaneEvenimentInfo"></p>
-							<p id="transportEvenimentInfo"></p>
-							<p id="informatiiEvenimentInfo"></p>
-						</div>
-						<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="modalFixedHeightPadding">
-							<h3> Înscrie-te: </h3>
-							<form >
-							  <div class="form-group">
-								<label for="numeParticipant" class="form-control-label">Nume participant:</label>
-								<input type="text" class="form-control" id="numeParticipant" onblur="validareNumeParticipant()" onkeydown="validareNumeParticipant()" required  >
-							  </div>  
-							  
-							  <div class="form-group">
-								<label for="prenumeParticipant" class="form-control-label">Prenume participant:</label>
-								<input type="text" class="form-control" id="prenumeParticipant" onblur="validarePrenumeParticipant()" onkeydown="validarePrenumeParticipant()" required  >
-							  </div> 
-		 
-							  <div class="form-group">
-								<label for="telefonParticipant" class="form-control-label">Telefon participant:</label>
-								<input type="number" min="1" class="form-control" id="telefonParticipant" onblur="validareTelefonParticipant()"  required="required">
-							  </div> 
-							 
-							  <div class="form-group">
-								<label for="informatiiAjutorEveniment" class="form-control-label">Cum poți ajuta?:</label>
-								<textarea class="form-control" id="informatiiAjutorEveniment"></textarea>
-							  </div>
-						</div>
-								<div class="modal-footer">
-									<button type="submit" id="buttonParticipaEveniment" class="btn btn-primary" onclick="inscriereEveniment()";>Înscrie-te</button>
-								</div>
-							</form>
-						
-					</div>
-				</div>				
-            </div>
-        </div>
-    </div>
 </div>
 
 </body>
