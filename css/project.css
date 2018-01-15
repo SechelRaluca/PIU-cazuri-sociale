@@ -230,6 +230,10 @@ div section h3 {
     color: black;
 }
 
+#toast-container {
+	z-index: 100000000;
+}
+
 #sumaAlocataCaz1 {
     color: black;
     display: inline;
