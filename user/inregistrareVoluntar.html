@@ -17,12 +17,12 @@
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
+    <script src="../js/inregistrareVoluntar.js"></script>
+
     <script src="../js/bootstrap.min.js"
             th:src="@{~/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" media="screen"
           href="../css/project.css" th:href="@{/css/project.css}"/>
-
-    <script src="../js/inregistrareVoluntar.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -32,13 +32,6 @@
                 e.preventDefault();
             });
         });
-    </script>
-
-    <script>
-        if (isValid($('#name').val(),$('#prenume').val(),$('#email').val(),
-                $('#address').val(),$('#phone').val())){
-            $('#inreg').setAttribute("data-target", "#myModal");
-        }
     </script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -108,126 +101,103 @@
         <div>
 
             <div class="form-group" id="nameContainer">
-                <label class="control-label col-sm-2" for="name">Nume:</label>
+                <label for="nume" class="control-label col-sm-2" >Nume:</label>
                 <div class="col-sm-10">
-                    <input type="text" id="name" name="name"
-                           autofocus="autofocus"
-                           placeholder="Nume"
-                           th:required="required" class="form-control"/>
+                <input type="text" class="form-control" id="nume" autofocus="autofocus"
+                       placeholder="Nume" onblur="validareNume()" onkeydown="validareNume()" required  >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group" id="name2Container">
-                <label class="control-label col-sm-2" for="prenume">Prenume:</label>
+                <label for="prenume" class="control-label col-sm-2">Prenume:</label>
                 <div class="col-sm-10">
-                    <input type="text" id="prenume" name="prenume"
-                           placeholder="Prenume" th:required="required"
-                           class="form-control"/>
+                <input type="text" class="form-control" id="prenume" placeholder="Prenume" onblur="validarePrenume()" onkeydown="validarePrenume()" required="requiered"  >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group" id="emailContainer">
-                <label class="control-label col-sm-2" for="email">E-mail:</label>
+                <label for="email" class="control-label col-sm-2">E-mail:</label>
                 <div class="col-sm-10">
-                    <input type="email" id="email" name="email"
-                           placeholder="E-mail" th:required="required"
-                           class="form-control"/>
+                <input type="text" class="form-control" id="email" placeholder="E-mail" onblur="validareEmail()" onkeydown="validareEmail()" required="requiered"  >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="phone">Telefon:</label>
+                <label for="telefon" class="control-label col-sm-2">Telefon:</label>
                 <div class="col-sm-10">
-                    <input type="text" id="phone" name="phone"
-                           placeholder="Telefon"
-                           th:required="required" class="form-control"/>
+                <input type="text" class="form-control" id="telefon" placeholder="Telefon" onblur="validareTelefon()" onkeydown="validareTelefon()" required="requiered"  >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="address">Adresă:</label>
+                <label for="adresa" class="control-label col-sm-2">Adresa:</label>
                 <div class="col-sm-10">
-                    <input type="text" id="address" name="address"
-                           placeholder="Adresă"
-                           th:required="required" class="form-control"/>
+                <input type="text" class="form-control" id="adresa" placeholder="Adresa" onblur="validareAdresa()" onkeydown="validareAdresa()" required="requiered" >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group">
-                <label class="control-label col-sm-2">Vârsta:</label>
+                <label for="varsta" class="control-label col-sm-2" >Vârsta:</label>
                 <div class="col-sm-10">
-                    <!--<input type="text" id="org"-->
-                    <!--name="Organizație"-->
-                    <!--placeholder="Organizație" class="form-control"/> <br/>-->
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <button class="dropdown-toggle btn-primary btn-lg btn-success" id="select"
-                                    data-toggle="dropdown">Vârsta
-                                <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">18</a></li>
-                                <li><a href="#">19</a></li>
-                                <li><a href="#">20</a></li>
-                                <li><a href="#">21</a></li>
-                                <li><a href="#">22</a></li>
-                                <li><a href="#">23</a></li>
-                                <li><a href="#">24</a></li>
-                                <li><a href="#">25</a></li>
-                                <li><a href="#">26</a></li>
-                                <li><a href="#">27</a></li>
-                                <li><a href="#">28</a></li>
-                                <li><a href="#">29</a></li>
-                                <li><a href="#">30</a></li>
-                                <li><a href="#">31</a></li>
-                                <li><a href="#">32</a></li>
-                                <li><a href="#">33</a></li>
-                                <li><a href="#">34</a></li>
-                                <li><a href="#">35</a></li>
-                                <li><a href="#">36</a></li>
-                                <li><a href="#">37</a></li>
-                                <li><a href="#">38</a></li>
-                                <li><a href="#">39</a></li>
-                                <li><a href="#">40</a></li>
-                                <li><a href="#">41</a></li>
-                                <li><a href="#">42</a></li>
-                                <li><a href="#">43</a></li>
-                                <li><a href="#">44</a></li>
-                                <li><a href="#">45</a></li>
-                                <li><a href="#">46</a></li>
-                                <li><a href="#">47</a></li>
-                                <li><a href="#">48</a></li>
-                                <li><a href="#">49</a></li>
-                                <li><a href="#">50</a></li>
-                                <li><a href="#">51</a></li>
-                                <li><a href="#">52</a></li>
-                                <li><a href="#">53</a></li>
-                                <li><a href="#">54</a></li>
-                                <li><a href="#">55</a></li>
-                                <li><a href="#">56</a></li>
-                                <li><a href="#">57</a></li>
-                                <li><a href="#">58</a></li>
-                                <li><a href="#">59</a></li>
-                                <li><a href="#">60</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <select class="form-control" id="varsta"  onchange="validareVarsta()" required="required">
+                    <option  value="1">18</option>
+                    <option  value="2">19</option>
+                    <option  value="3">20</option>
+                    <option  value="4">21</option>
+                    <option  value="5">22</option>
+                    <option  value="6">23</option>
+                    <option  value="7">24</option>
+                    <option  value="8">25</option>
+                    <option  value="9">26</option>
+                    <option  value="10">27</option>
+                    <option  value="11">28</option>
+                    <option  value="12">29</option>
+                    <option  value="13">30</option>
+                    <option  value="14">31</option>
+                    <option  value="15">32</option>
+                    <option  value="16">33</option>
+                    <option  value="17">34</option>
+                    <option  value="18">35</option>
+                    <option  value="19">36</option>
+                    <option  value="20">37</option>
+                    <option  value="21">38</option>
+                    <option  value="22">39</option>
+                    <option  value="23">40</option>
+                    <option  value="24">41</option>
+                    <option  value="25">42</option>
+                    <option  value="26">43</option>
+                    <option  value="27">44</option>
+                    <option  value="28">45</option>
+                    <option  value="29">46</option>
+                    <option  value="30">47</option>
+                    <option  value="31">48</option>
+                    <option  value="32">49</option>
+                    <option  value="33">50</option>
+                    <option  value="34">51</option>
+                    <option  value="35">52</option>
+                    <option  value="36">53</option>
+                    <option  value="37">54</option>
+                    <option  value="38">55</option>
+                    <option  value="39">56</option>
+                    <option  value="40">57</option>
+                    <option  value="41">58</option>
+                    <option  value="42">59</option>
+                    <option  value="43">60</option>
+                </select>
                 </div>
             </div>
             <br>
             <br>
             <br>
-            <button id="inreg" onclick=" if (isValid($('#name').val(),$('#prenume').val(),$('#email').val(),
-            $('#address').val(),$('#phone').val()))
-            {$('#inreg').attr('data-target', '#myModal')}"
+            <button id="inreg" onclick="inregistrareVoluntar()"
                     type="button" class="btn btn-primary btn-lg btn-success" data-target="myModal"
                     data-toggle="modal">Înregistrează-te
             </button>
-
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
