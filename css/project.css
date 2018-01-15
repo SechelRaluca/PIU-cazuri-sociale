@@ -245,24 +245,6 @@ div section h3 {
     display: inline;
 }
 
-#sumaCaz1 {
-    color: black;
-    float: left;
-    margin-top: 15px;
-}
-
-#sumaCaz2 {
-    color: black;
-    float: left;
-    margin-top: 15px;
-}
-
-#sumaCaz3 {
-    color: black;
-    float: left;
-    margin-top: 15px;
-}
-
 #baniCazSocial {
     color: black;
     float: left;
@@ -470,16 +452,6 @@ img.center {
 
 }
 
-#titleEvenimente {
-    position: relative;
-    top: 75px;
-    left: 50px;
-    color: black;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: "Times New Roman", Times, serif;
-}
-
 #sectionAdjust {
     width: 400px;
     height: 250px;
@@ -490,6 +462,7 @@ img.center {
     top: 75px;
     left: 50px;
     color: black;
+	width: 400px;
     font-weight: bold;
     font-size: 30px;
 }

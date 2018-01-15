@@ -64,7 +64,7 @@
     </nav>
 </div>
 
-<div id="band" class="container text-center">
+<div id="band" class="container containerPadding text-center">
 
 	<h3>Gestiune monetară</h3>
 	
@@ -72,7 +72,7 @@
 	<h2 id="suma">40000</h2>
 	<p style="color: black;">Cazurile sunt afişate în ordinea gravităţii, respectiv a perioadei de adăugare.</p>
 
-    <div class="container">
+    <div class="container containerPadding">
         <div class="row">
             <div>
                 <form>
@@ -80,16 +80,16 @@
 						<div>
 							<img
 								src="../images/caz1.jpg" width="400px" height="200px"
-								class="img-responsive"
+								class="img-responsive marginAuto"
 								th:src="@{../images/caz1.jpg}"/>
-							<p id="description">Caz social 1</p>								
+							<p class="center">Caz social 1</p>								
 						</div>
-						<div id="baniCazSocial">Suma alocată acestui caz: <div id="sumaAlocataCaz1">0</div> RON
-						</div>
-						</br>
+						<p class="center">Suma alocată acestui caz: <span id="sumaAlocataCaz1">0</span> RON
+						</p>
 						<input id="sumaCaz1" type="number" autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+						&nbsp;&nbsp;&nbsp;&nbsp;
 						<button id="repartizareCaz1"
-								type="button" class="btn btn-primary btn-lg btn-success butonRepartizare"
+								type="button" class="btn btn-primary btn-lg btn-success"
 								data-toggle="modal" onclick="checkSumInput('sumaCaz1', 'sumaAlocataCaz1', '#repartizareCaz1', '#repModal1')">Repartizare
 						</button>						
 					</div>
@@ -104,16 +104,16 @@
 						<div>
 							<img
 								src="../images/caz2.jpg" width="400px" height="200px"
-								class="img-responsive"
+								class="img-responsive marginAuto"
 								th:src="@{../images/caz2.jpg}"/>
-							<p id="description">Caz social 2</p>
+							<p class="center">Caz social 2</p>
 						</div>
-						<div id="baniCazSocial">Suma alocată acestui caz: <div id="sumaAlocataCaz2">0</div> RON
-						</div>
-						</br>
+						<p class="center">Suma alocată acestui caz: <span id="sumaAlocataCaz2">0</span> RON
+						</p>
 						<input id="sumaCaz2" type="number"autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+						&nbsp;&nbsp;&nbsp;&nbsp;
 						<button id="repartizareCaz2"
-								type="button" class="btn btn-primary btn-lg btn-success butonRepartizare"
+								type="button" class="btn btn-primary btn-lg btn-success"
 								data-toggle="modal" onclick="checkSumInput('sumaCaz2', 'sumaAlocataCaz2', '#repartizareCaz2', '#repModal2')">Repartizare
 						</button>	
 					</div>
@@ -128,16 +128,16 @@
 						<div>
 							<img
 								src="../images/caz3.jpg" width="400px" height="200px"
-								class="img-responsive"
+								class="img-responsive marginAuto"
 								th:src="@{../images/caz3.jpg}"/>
-							<p id="description">Caz social 3</p>							
+							<p class="center">Caz social 3</p>							
 						</div>
-						<div id="baniCazSocial">Suma alocată acestui caz: <div id="sumaAlocataCaz3">0</div> RON
-						</div>
-						</br>
+						<p class="center">Suma alocată acestui caz: <span id="sumaAlocataCaz3">0</span> RON
+						</p>
 						<input id="sumaCaz3" type="number" autocomplete="off" placeholder="Introduceţi o sumă..." min="1">
+						&nbsp;&nbsp;&nbsp;&nbsp;
 						<button id="repartizareCaz3"
-								type="button" class="btn btn-primary btn-lg btn-success butonRepartizare"
+								type="button" class="btn btn-primary btn-lg btn-success"
 								data-toggle="modal" onclick="checkSumInput('sumaCaz3', 'sumaAlocataCaz3', '#repartizareCaz3', '#repModal3')">Repartizare
 						</button>
 					</div>
