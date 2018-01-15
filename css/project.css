@@ -736,6 +736,7 @@ input#searchButton:focus {
 
 #titleProduse {
     position: relative;
+	text-align: center;
     top: 75px;
     left: 50px;
     color: black;
