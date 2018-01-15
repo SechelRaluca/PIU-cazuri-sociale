@@ -303,7 +303,7 @@ div section h3 {
     padding-top: 60px;
     padding-left: 60px;
     margin-right: 0px;
-    width: 100%;
+    width: 50%;
 }
 
 .clear {
@@ -377,6 +377,15 @@ img.center {
     padding-left: 60px;
     margin-right: 0px;
     width: 100%;
+}
+
+.rightAdjust1 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 60px;
+    padding-left: 60px;
+    margin-right: 0px;
+    width: 110%;
 }
 
 .clear {
