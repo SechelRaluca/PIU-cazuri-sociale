@@ -23,10 +23,8 @@ function inregistrareVoluntar()
         validareVarsta())
 
     {
-        //$('#inreg').setAttribute("data-target", "#myModal");
         $('#inreg').attr('data-target', '#myModal');
         resetForm();
-        //toastr.info('Înscriere realizată cu succes!');
         return true;
     }
     else return false;
