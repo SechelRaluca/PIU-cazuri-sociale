@@ -174,7 +174,7 @@
 
 <div id="donateModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <!-- Modal content-->
+
         <div class="modal-content">
             <div class="modal-header">
                 <button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1');"
@@ -182,41 +182,52 @@
                 </button>
                 <h4 class="modal-title">Donează online!</h4>
             </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Vreau să donez:</label><br>
-                <input id="monthly1" type="radio" name="frequency" value="monthly"> Lunar<br>
-                <input id="oneTime1" type="radio" name="frequency" value="oneTime"> O singură dată<br>
-                <label class="paragraphAdjust helpSection">Suma:</label><br>
-                <input id="sumCase1" onblur="validateSum('sumCase1')" type="number" autocomplete="off"
-                       placeholder="Introduceţi o sumă..." min="1">
-                <hr style="border-color: #fff; margin: 0 0 0 0;">
-                <label class="paragraphAdjust helpSection">Datele dumneavoastră:</label><br>
-                <!-- <label class="paragraphAdjust formSection">Numele:</label> -->
-                <input id="lastName1" onblur="validateLastName('lastName1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi numele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Prenumele:</label> -->
-                <input id="firstName1" onblur="validateFirstName('firstName1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi prenumele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Telefon:</label> -->
-                <input id="phoneNumber1" onblur="validatePhoneNumber('phoneNumber1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi telefonul..."><br>
-                <!-- <label class="paragraphAdjust formSection">Email:</label> -->
-                <input id="email1" onblur="validateEmail('email1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi email-ul..."><br>
-                <br>
-                <button id="donate1"
-                        onclick="donate('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1', '#donate1', '#payModal1');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Donează
-                </button>
+            <div class="modal-body">
+			<form >
+				  <div class="form-group">
+					<label class="form-control-label">Vreau să donez:  &nbsp;&nbsp;&nbsp;&nbsp;</label>			
+						<label class="radio-inline"><input type="radio" id="monthly1" name="optradio">Lunar</label>
+						<label class="radio-inline"><input type="radio" id="oneTime1" name="optradio">O singură dată</label>				
+				  </div>  
+				  
+				  <div class="form-group">
+					<label for="sumCase1" class="form-control-label">Suma:</label>
+					<input type="number" min="1" class="form-control " id="sumCase1" onblur="validateSum('sumCase1')" required="required" >
+				  </div> 
+				  
+				   <div class="form-group">
+					<label for="lastName1" class="form-control-label">Numele:</label>
+					<input type="text"  class="form-control " id="lastName1" onblur="validateLastName('lastName1')" required="required" >
+				  </div> 
+				  
+				  <div class="form-group">
+					<label for="firstName1" class="form-control-label">Prenumele:</label>
+					<input type="text"  class="form-control " id="firstName1" onblur="validateFirstName('firstName1')" required="required" >
+				  </div> 
+				  
+				   <div class="form-group">
+					<label for="phoneNumber1" class="form-control-label">Telefon:</label>
+					<input type="number" min="1" class="form-control " id="phoneNumber1" onblur="validatePhoneNumber('phoneNumber1')" required="required" >
+				  </div> 
+				  
+				   <div class="form-group">
+					<label for="email1" class="form-control-label">Email:</label>
+					<input type="text" class="form-control " id="email1" onblur="validateEmail('email1')" required="required" >
+				  </div> 
+		
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" id="donate1" class="btn btn-primary" onclick="donate('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1', '#donate1', '#payModal1');">Donează</button>
+				  </div>				
+			</form>
+
             </div>
         </div>
     </div>
 </div>
 
 
-<div id="payModal1" class="modal fade" role="dialog">
+<div id="modalPlata" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

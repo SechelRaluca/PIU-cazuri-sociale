@@ -170,7 +170,6 @@
 <div id="detailModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -194,7 +193,6 @@
 <div id="detailModal2" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -204,7 +202,7 @@
                 <img src="../images/caz2.jpg" width="200px" height="150px">
                 <button
                         type="button" class="btn btn-primary btn-lg btn-success donateButton"
-                        data-toggle="modal" data-target="#donateModal2" data-dismiss="modal">
+                        data-toggle="modal" data-target="#donateModal1" data-dismiss="modal">
                     Donează
                 </button>
                 <p class="paragraphAdjust">Caz 2</p>
@@ -218,7 +216,6 @@
 <div id="detailModal3" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -228,7 +225,7 @@
                 <img src="../images/caz3.jpg" width="200px" height="150px">
                 <button
                         type="button" class="btn btn-primary btn-lg btn-success donateButton"
-                        data-toggle="modal" data-target="#donateModal3" data-dismiss="modal">
+                        data-toggle="modal" data-target="#donateModal1" data-dismiss="modal">
                     Donează
                 </button>
                 <p class="paragraphAdjust">Caz 3</p>
@@ -242,7 +239,6 @@
 <div id="donateModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1');"
@@ -250,248 +246,108 @@
                 </button>
                 <h4 class="modal-title">Donează online!</h4>
             </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Vreau să donez:</label><br>
-                <input id="monthly1" type="radio" name="frequency" value="monthly"> Lunar<br>
-                <input id="oneTime1" type="radio" name="frequency" value="oneTime"> O singură dată<br>
-                <label class="paragraphAdjust helpSection">Suma:</label><br>
-                <input id="sumCase1" onblur="validateSum('sumCase1')" type="number" autocomplete="off"
-                       placeholder="Introduceţi o sumă..." min="1">
-                <hr style="border-color: #fff; margin: 0 0 0 0;">
-                <label class="paragraphAdjust helpSection">Datele dumneavoastră:</label><br>
-                <!-- <label class="paragraphAdjust formSection">Numele:</label> -->
-                <input id="lastName1" onblur="validateLastName('lastName1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi numele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Prenumele:</label> -->
-                <input id="firstName1" onblur="validateFirstName('firstName1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi prenumele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Telefon:</label> -->
-                <input id="phoneNumber1" onblur="validatePhoneNumber('phoneNumber1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi telefonul..."><br>
-                <!-- <label class="paragraphAdjust formSection">Email:</label> -->
-                <input id="email1" onblur="validateEmail('email1')" type="text" autocomplete="off"
-                       placeholder="Introduceţi email-ul..."><br>
-                <br>
-                <button id="donate1"
-                        onclick="donate('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1', '#donate1', '#payModal1');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Donează
-                </button>
+            <div class="modal-body">
+			<form >
+				  <div class="form-group">
+					<label class="form-control-label">Vreau să donez:  &nbsp;&nbsp;&nbsp;&nbsp;</label>			
+						<label class="radio-inline"><input type="radio" id="monthly1" name="optradio">Lunar</label>
+						<label class="radio-inline"><input type="radio" id="oneTime1" name="optradio">O singură dată</label>				
+				  </div>  
+				  
+				  <div class="form-group">
+					<label for="sumCase1" class="form-control-label">Suma:</label>
+					<input type="number" min="1" class="form-control " id="sumCase1" onblur="validateSum('sumCase1')" required="required" >
+				  </div> 
+				  
+				   <div class="form-group">
+					<label for="lastName1" class="form-control-label">Numele:</label>
+					<input type="text"  class="form-control " id="lastName1" onblur="validateLastName('lastName1')" required="required" >
+				  </div> 
+				  
+				  <div class="form-group">
+					<label for="firstName1" class="form-control-label">Prenumele:</label>
+					<input type="text"  class="form-control " id="firstName1" onblur="validateFirstName('firstName1')" required="required" >
+				  </div> 
+				  
+				   <div class="form-group">
+					<label for="phoneNumber1" class="form-control-label">Telefon:</label>
+					<input type="number" min="1" class="form-control " id="phoneNumber1" onblur="validatePhoneNumber('phoneNumber1')" required="required" >
+				  </div> 
+				  
+				   <div class="form-group">
+					<label for="email1" class="form-control-label">Email:</label>
+					<input type="text" class="form-control " id="email1" onblur="validateEmail('email1')" required="required" >
+				  </div> 
+		
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" id="donate1" class="btn btn-primary" onclick="donate('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1', '#donate1', '#payModal1');">Donează</button>
+				  </div>				
+			</form>
+
             </div>
         </div>
     </div>
 </div>
 
-<div id="donateModal2" class="modal fade" role="dialog">
+<div id="modalPlata" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button onclick="resetFieldsDonatePopup('#monthly2', '#oneTime2', 'sumCase2', 'lastName2', 'firstName2', 'phoneNumber2', 'email2');"
-                        type="button" class="close" data-dismiss="modal">&times;
-                </button>
-                <h4 class="modal-title">Donează online!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modalAdaugaProdusTitleHeader">Card bancar:</h4>
             </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Vreau să donez:</label><br>
-                <input id="monthly2" type="radio" name="frequency" value="monthly"> Lunar<br>
-                <input id="oneTime2" type="radio" name="frequency" value="oneTime"> O singură dată<br>
-                <label class="paragraphAdjust helpSection">Suma:</label><br>
-                <input id="sumCase2" onblur="validateSum('sumCase2')" type="number" autocomplete="off"
-                       placeholder="Introduceţi o sumă..." min="1">
-                <hr style="border-color: #fff; margin: 0 0 0 0;">
-                <label class="paragraphAdjust helpSection">Datele dumneavoastră:</label><br>
-                <!-- <label class="paragraphAdjust formSection">Numele:</label> -->
-                <input id="lastName2" onblur="validateLastName('lastName2')" type="text" autocomplete="off"
-                       placeholder="Introduceţi numele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Prenumele:</label> -->
-                <input id="firstName2" onblur="validateFirstName('firstName2')" type="text" autocomplete="off"
-                       placeholder="Introduceţi prenumele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Telefon:</label> -->
-                <input id="phoneNumber2" onblur="validatePhoneNumber('phoneNumber2')" type="text" autocomplete="off"
-                       placeholder="Introduceţi telefonul..."><br>
-                <!-- <label class="paragraphAdjust formSection">Email:</label> -->
-                <input id="email2" onblur="validateEmail('email2')" type="text" autocomplete="off"
-                       placeholder="Introduceţi email-ul..."><br>
-                <br>
-                <button id="donate2"
-                        onclick="donate('#monthly2', '#oneTime2', 'sumCase2', 'lastName2', 'firstName2', 'phoneNumber2', 'email2', '#donate2', '#payModal2');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Donează
-                </button>
+            <div class="modal-body">
+			
+				<form >
+					  <div class="form-group">
+						<label for="tipCard" class="form-control-label">Tip card:</label>
+						<select id="tipCard" class="form-control inputPlata2">
+							<option value="mastercard">Mastercard</option>
+							<option value="maestro">Maestro</option>
+							<option value="visa">Visa</option>
+							<option value="visaElectron">Visa Electron</option>
+						</select>
+					  </div>  
+					  
+					  <div class="form-group">
+						<label for="numarCard" class="form-control-label">Număr card:</label>
+						<input type="text" class="form-control inputPlata2" id="numarCard" onblur="" autocomplete="off" placeholder="####-####-####-####" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"required="required" onkeydown="validateCardNr(event)">
+					  </div>
+			
+					  <div class="form-group">
+						<label for="dataExpirare" class="form-control-label">Data expirare:</label>
+						<input type="date"  min="01/16/2018" class="form-control inputPlata2" id="dataExpirare" onblur=""  required="required">
+					  </div>
+					  
+					   <div class="form-group">
+						<label for="numarVerificareCard" class="form-control-label">Număr verificare card:</label>
+						<input type="text" class="form-control inputPlata2" id="numarVerificareCard" onblur="" autocomplete="off" placeholder="###" pattern="[0-9]{3}" required="required" onkeydown="validateCVC(event)">
+					  </div>
+			
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" id="buttonPlataComanda" class="btn btn-primary" onclick="platesteComanda()">Plătește</button>
+				      </div>				
+				</form>		
             </div>
         </div>
     </div>
 </div>
 
-<div id="donateModal3" class="modal fade" role="dialog">
+<div id="plataSucces" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button onclick="resetFieldsDonatePopup('#monthly3', '#oneTime3', 'sumCase3', 'lastName3', 'firstName3', 'phoneNumber3', 'email3');"
-                        type="button" class="close" data-dismiss="modal">&times;
-                </button>
-                <h4 class="modal-title">Donează online!</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Plata cu succes!</h4>
             </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Vreau să donez:</label><br>
-                <input id="monthly3" type="radio" name="frequency" value="monthly"> Lunar<br>
-                <input id="oneTime3" type="radio" name="frequency" value="oneTime"> O singură dată<br>
-                <label class="paragraphAdjust helpSection">Suma:</label><br>
-                <input id="sumCase3" onblur="validateSum('sumCase3')" type="number" autocomplete="off"
-                       placeholder="Introduceţi o sumă..." min="1">
-                <hr style="border-color: #fff; margin: 0 0 0 0;">
-                <label class="paragraphAdjust helpSection">Datele dumneavoastră:</label><br>
-                <!-- <label class="paragraphAdjust formSection">Numele:</label> -->
-                <input id="lastName3" onblur="validateLastName('lastName3')" type="text" autocomplete="off"
-                       placeholder="Introduceţi numele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Prenumele:</label> -->
-                <input id="firstName3" onblur="validateFirstName('firstName3')" type="text" autocomplete="off"
-                       placeholder="Introduceţi prenumele..."><br>
-                <!-- <label class="paragraphAdjust formSection">Telefon:</label> -->
-                <input id="phoneNumber3" onblur="validatePhoneNumber('phoneNumber3')" type="text" autocomplete="off"
-                       placeholder="Introduceţi telefonul..."><br>
-                <!-- <label class="paragraphAdjust formSection">Email:</label> -->
-                <input id="email3" onblur="validateEmail('email3')" type="text" autocomplete="off"
-                       placeholder="Introduceţi email-ul..."><br>
-                <br>
-                <button id="donate3"
-                        onclick="donate('#monthly3', '#oneTime3', 'sumCase3', 'lastName3', 'firstName3', 'phoneNumber3', 'email3', '#donate3', '#payModal3');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Donează
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="payModal1" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); resetFieldsCardPopup('cardNumber1', 'expirationDate1', 'cardVerificationNumber1');"
-                        type="button" class="close" data-dismiss="modal">&times;
-                </button>
-                <h4 class="modal-title">Detalii card bancar</h4>
-            </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Tip card:</label>
-                <select id="card1">
-                    <option value="mastercard">Mastercard</option>
-                    <option value="maestro">Maestro</option>
-                    <option value="visa">Visa</option>
-                    <option value="visaElectron">Visa Electron</option>
-                </select>
-                <br>
-                <label class="paragraphAdjust formSection">Număr card:</label><br>
-                <input id="cardNumber1" onblur="validateCardNumber('cardNumber1')" type="text" autocomplete="off"
-                       placeholder="nnnn nnnn nnnn nnnn"><br>
-                <label class="paragraphAdjust formSection">Data expirării:</label><br>
-                <input id="expirationDate1" onblur="isValid('expirationDate1')" type="date" class="form-control"
-                       name="expirationDate"
-                       th:required="required"/>
-                <label class="paragraphAdjust formSection">Număr verificare card:</label><br>
-                <input id="cardVerificationNumber1" onblur="validateCardVerificationNumber('cardVerificationNumber1')"
-                       type="text" autocomplete="off" placeholder="nnn"><br>
-                <br>
-                <button id="pay1"
-                        onclick="pay('cardNumber1', 'expirationDate1', 'cardVerificationNumber1', '#pay1'); resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); disablePopup('#payModal1');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Plăteşte
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="payModal2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button onclick="resetFieldsDonatePopup('#monthly2', '#oneTime2', 'sumCase2', 'lastName2', 'firstName2', 'phoneNumber2', 'email2'); disablePopup('#donate2'); resetFieldsCardPopup('cardNumber2', 'expirationDate2', 'cardVerificationNumber2');"
-                        type="button" class="close" data-dismiss="modal">&times;
-                </button>
-                <h4 class="modal-title">Detalii card bancar</h4>
-            </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Tip card:</label>
-                <select id="card2">
-                    <option value="mastercard">Mastercard</option>
-                    <option value="maestro">Maestro</option>
-                    <option value="visa">Visa</option>
-                    <option value="visaElectron">Visa Electron</option>
-                </select>
-                <br>
-                <label class="paragraphAdjust formSection">Număr card:</label><br>
-                <input id="cardNumber2" onblur="validateCardNumber('cardNumber2')" type="text" autocomplete="off"
-                       placeholder="nnnn nnnn nnnn nnnn"><br>
-                <label class="paragraphAdjust formSection">Data expirării:</label><br>
-                <input id="expirationDate2" onblur="isValid('expirationDate2')" type="date" class="form-control"
-                       name="expirationDate"
-                       th:required="required"/>
-                <label class="paragraphAdjust formSection">Număr verificare card:</label><br>
-                <input id="cardVerificationNumber2" onblur="validateCardVerificationNumber('cardVerificationNumber2')"
-                       type="text" autocomplete="off" placeholder="nnn"><br>
-                <br>
-                <button id="pay2"
-                        onclick="pay('cardNumber2', 'expirationDate2', 'cardVerificationNumber2', '#pay2'); resetFieldsDonatePopup('#monthly2', '#oneTime2', 'sumCase2', 'lastName2', 'firstName2', 'phoneNumber2', 'email2'); disablePopup('#donate2'); disablePopup('#payModal2');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Plăteşte
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="payModal3" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button onclick="resetFieldsDonatePopup('#monthly3', '#oneTime3', 'sumCase3', 'lastName3', 'firstName3', 'phoneNumber3', 'email3'); disablePopup('#donate3'); resetFieldsCardPopup('cardNumber3', 'expirationDate3', 'cardVerificationNumber3');"
-                        type="button" class="close" data-dismiss="modal">&times;
-                </button>
-                <h4 class="modal-title">Detalii card bancar</h4>
-            </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Tip card:</label>
-                <select id="card3">
-                    <option value="mastercard">Mastercard</option>
-                    <option value="maestro">Maestro</option>
-                    <option value="visa">Visa</option>
-                    <option value="visaElectron">Visa Electron</option>
-                </select>
-                <br>
-                <label class="paragraphAdjust formSection">Număr card:</label><br>
-                <input id="cardNumber3" onblur="validateCardNumber('cardNumber3')" type="text" autocomplete="off"
-                       placeholder="nnnn nnnn nnnn nnnn"><br>
-                <label class="paragraphAdjust formSection">Data expirării:</label><br>
-                <input id="expirationDate3" onblur="isValid('expirationDate3')" type="date" class="form-control"
-                       name="expirationDate"
-                       th:required="required"/>
-                <label class="paragraphAdjust formSection">Număr verificare card:</label><br>
-                <input id="cardVerificationNumber3" onblur="validateCardVerificationNumber('cardVerificationNumber3')"
-                       type="text" autocomplete="off" placeholder="nnn"><br>
-                <br>
-                <button id="pay3"
-                        onclick="pay('cardNumber3', 'expirationDate3', 'cardVerificationNumber3', '#pay3'); resetFieldsDonatePopup('#monthly3', '#oneTime3', 'sumCase3', 'lastName3', 'firstName3', 'phoneNumber3', 'email3'); disablePopup('#donate3'); disablePopup('#payModal3');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Plăteşte
-                </button>
+            <div class="modal-body">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						
             </div>
         </div>
     </div>

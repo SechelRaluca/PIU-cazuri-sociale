@@ -1,4 +1,4 @@
-var produse = [{nume: 'Cutie de bijuterii', cantitate: '10', pret: '30', poza: "../images/produs1.jpg"},
+var produse = [{nume: 'Cutie de bijuterii', cantitate: '25', pret: '30', poza: "../images/produs1.jpg"},
     {nume: 'Papusa', cantitate: '18', pret: '25', poza: "../images/produs2.jpg"},
     {nume: 'Minioni', cantitate: '16', pret: '20', poza: "../images/produs3.jpg"},
     {nume: 'Ceainic', cantitate: '15', pret: '18', poza: "../images/produs4.jpg"},
@@ -59,9 +59,10 @@ function platesteComanda() {
     }
 
     if (valid) {
-
+        setTimeout(function(){
         toastr.info('Plată efectuată cu succes!');
-        $('#modalPlata').modal('hide');
+	}, 500);
+        //$('#modalPlata').modal('hide');
     }
 
 }
@@ -189,7 +190,7 @@ function validateCardNumber(event) {
     if (el.value.length == 19 && event.keyCode != 8) {
         event.preventDefault();
     }
-    else if ((event.keyCode >= 48 && event.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+    else if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) {
         if (el.value.length == 4 || el.value.length == 9 || el.value.length == 14) {
             el.value += '-';
         }

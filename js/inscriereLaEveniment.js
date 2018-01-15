@@ -21,7 +21,7 @@ function inscriereEveniment()
 			
 			resetForm();
 			$('#numarPersoaneEvenimentInfo').text("Număr persoane: " + evenimente[evenimentSelectat].numarPersoaneEveniment);
-						 toastr.info('V-ați înscris cu succes la eveniment!');
+			toastr.info('V-ați înscris cu succes la eveniment!');
 			$('#modalParticipaLaEveniment').modal('hide');
 			
 		}

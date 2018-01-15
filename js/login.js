@@ -1,4 +1,3 @@
-var attempt = 3;
 
 function validate() {
     var username = document.getElementById("username").value;
@@ -8,23 +7,14 @@ function validate() {
     } else if (username.search("member") !== -1 && password.search("member") !== -1) {
         window.location = "../member/memberHomePage.html"
     } else {
-        attempt--;
         if ((username === "admin" && password !== "admin") || (username.search("member") !== -1 && password.search("member") === -1)) {
-            alert("Parolă incorectă! Reîncercați!");
+            toastr.error("Parolă incorectă! Reîncercați!");
         }
         else if ((username !== "admin" && password === "admin") || (username.search("member") === -1 && password.search("member") !== -1)) {
-            alert("Utilizator incorect! Reîncercați!");
+            toastr.error("Utilizator incorect! Reîncercați!");
         }
         else {
-            //TODO : verify toastr, else add modal
-            // toastr.error("Utilizator si parolă incorecte!");
-            alert("Utilizator si parolă incorecte!")
-        }
-        alert("You have left " + attempt + " attempt;");
-        if (attempt === 0) {
-            document.getElementById("username").disabled = true;
-            document.getElementById("password").disabled = true;
-            document.getElementById("submit").disabled = true;
+            toastr.error("Utilizator si parolă incorecte!");
         }
         return false;
     }
