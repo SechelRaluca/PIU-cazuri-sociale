@@ -31,15 +31,6 @@
         });
     </script>
 
-    <script>
-        if (isValid($('#name').val(),$('#prenume').val(),$('#email').val(),
-                $('#address').val(),$('#phone').val(),$('#username').val(),$('#password').val())){
-            $('#addMem').setAttribute("data-target", "#myModal");
-        }
-    </script>
-
-
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
@@ -77,15 +68,14 @@
     <br>
     <div class="row">
 
-        <div>
+        <form>
 
             <div class="form-group" id="nameContainer">
                 <label class="control-label col-sm-2" for="name">Nume:</label>
                 <div class="col-sm-10">
                     <input type="text" id="name" name="name"
-                           autofocus="autofocus"
-                           placeholder="Nume"
-                           th:required="required" class="form-control"/>
+                           autofocus="autofocus"placeholder="Nume"
+                           class="form-control" onblur="validareNume()" onkeydown="validareNume()" required  >
                 </div>
             </div>
             <br>
@@ -94,8 +84,7 @@
                 <label class="control-label col-sm-2" for="prenume">Prenume:</label>
                 <div class="col-sm-10">
                     <input type="text" id="prenume" name="prenume"
-                           placeholder="Prenume" th:required="required"
-                           class="form-control"/>
+                           placeholder="Prenume" class="form-control" onblur="validarePrenume()" onkeydown="validarePrenume()" required="requiered">
                 </div>
             </div>
             <br>
@@ -104,8 +93,7 @@
                 <label class="control-label col-sm-2" for="email">E-mail:</label>
                 <div class="col-sm-10">
                     <input type="email" id="email" name="email"
-                           placeholder="E-mail" th:required="required"
-                           class="form-control"/>
+                           placeholder="E-mail" class="form-control" onblur="validareEmail()" onkeydown="validareEmail()" required="requiered">
                 </div>
             </div>
             <br>
@@ -114,8 +102,7 @@
                 <label class="control-label col-sm-2" for="address">Adresă:</label>
                 <div class="col-sm-10">
                     <input type="text" id="address" name="address"
-                           placeholder="Adresă"
-                           th:required="required" class="form-control"/>
+                           placeholder="Adresă" class="form-control"  onblur="validareAdresa()" onkeydown="validareAdresa()" required="requiered">
                 </div>
             </div>
             <br>
@@ -124,61 +111,49 @@
                 <label class="control-label col-sm-2" for="phone">Telefon:</label>
                 <div class="col-sm-10">
                     <input type="text" id="phone" name="phone"
-                           placeholder="Telefon"
-                           th:required="required" class="form-control"/>
+                           placeholder="Telefon" class="form-control"  onblur="validareTelefon()" onkeydown="validareTelefon()" required="requiered" >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Nume utilizator:</label>
+                <label class="control-label col-sm-2" for="username">Nume utilizator:</label>
                 <div class="col-sm-10">
-                    <input type="email" id="username" name="username"
-                           th:required="required"
+                    <input type="text" id="username" name="username"
                            placeholder="Nume utilizator"
-                           class="form-control"/>
+                           class="form-control"  onblur="validareUsername()" onkeydown="validareUsername()" required="requiered" >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="address">Parolă:</label>
+                <label class="control-label col-sm-2" for="password">Parolă:</label>
                 <div class="col-sm-10">
                     <input type="password" id="password"
                            name="password"
-                           placeholder="Parolă" class="form-control"/> <br/>
+                           placeholder="Parolă" class="form-control" onblur="validareParola()" onkeydown="validareParola()" required="requiered" >
                 </div>
             </div>
             <br>
             <br>
             <div class="form-group">
-                <label class="control-label col-sm-2">Organizație:</label>
+                <label for="organizatie" class="control-label col-sm-2" >Organizație:</label>
                 <div class="col-sm-10">
-                    <!--<input type="text" id="org"-->
-                    <!--name="Organizație"-->
-                    <!--placeholder="Organizație" class="form-control"/> <br/>-->
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <button class="dropdown-toggle btn-primary btn-lg btn-success" id="select"
-                                    data-toggle="dropdown">Organizație
-                                <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">org1</a></li>
-                                <li><a href="#">org2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <select class="form-control" id="organizatie"  onchange="validareOrganizatie()" required="required">
+                        <option  value="1">organizație 1</option>
+                        <option  value="2">organizație 2</option>
+                    </select>
                 </div>
             </div>
             <br>
             <br>
             <br>
-            <button id="addMem" onclick=" if (isValid($('#name').val(),$('#prenume').val(),$('#email').val(),
-            $('#address').val(),$('#phone').val(),$('#username').val(),$('#password').val()))
-            {$('#addMem').attr('data-target', '#myModal')}"
-                    type="button" class="btn btn-primary btn-lg btn-success" data-target="myModal"
+            <button id="addMem" onclick="adaugareMembru()"
+                    type="submit" class="btn btn-primary btn-lg btn-success" data-target="myModal"
                     data-toggle="modal">Adaugă
             </button>
+
+        </form>
 
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -198,8 +173,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
         </div>
 
     </div>
