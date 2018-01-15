@@ -75,42 +75,36 @@
     <h3>Generare raporturi</h3>
 
     <div class="row">
-
-        <div style="padding-left: 130px" class="form-group">
-            <label class="control-label col-sm-2">Status caz:</label>
-            <div class="col-sm-10">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <button class="dropdown-toggle btn-primary btn-lg btn-info" id="select"
-                                data-toggle="dropdown">Selectați
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Rezolvat</a></li>
-                            <li><a href="#">În așteptare</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="container text-center">
+        <div class="container containerPadding text-center">
+			<div class="form-group" id="statusCazContainer">
+				<label class="control-label col-sm-2 text-right">Status caz:</label>
+				<div class="input-group input-append col-sm-7" style="padding-right: 15px;padding-left: 15px">
+					<select class="form-control" required="required">
+					  <option  value="1">Rezolvat</option>
+					  <option  value="2">În așteptare</option>
+					</select>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
             <div class="form-group" id="startDateContainer">
-                <label class="control-label col-sm-2" for="startDate">Dată Început:</label>
+                <label class="control-label col-sm-2 text-right" for="startDate">Dată început:</label>
                 <div class="input-group input-append date col-sm-7" id="startDateRangePicker"
                      style="padding-right: 15px;padding-left: 15px">
                     <input type="date" class="form-control" name="startDate" id="startDate"
                            th:required="required"/>
                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
+				<div class="col-sm-3"></div>
             </div>
             <div class="form-group" id="endDateContainer">
-                <label class="control-label col-sm-2" for="endDate">Dată Final:</label>
+                <label class="control-label col-sm-2 text-right" for="endDate">Dată final:</label>
                 <div class="input-group input-append date col-sm-7" id="endDateRangePicker"
                      style="padding-right: 15px;padding-left: 15px">
                     <input type="date" class="form-control" name="endDate" id="endDate"
                            th:required="required"/>
                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
+				<div class="col-sm-3"></div>
             </div>
         </div>
 

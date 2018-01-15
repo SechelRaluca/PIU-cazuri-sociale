@@ -21,6 +21,14 @@ h3, h4 {
     padding: 80px 120px;
 }
 
+.containerPadding {
+	padding: 80px 0px;
+}
+
+.marginAuto {
+	margin: auto;
+}
+
 .carousel-inner img {
     -webkit-filter: grayscale(90%);
     filter: grayscale(90%); /* make all photos black and white */
@@ -728,6 +736,7 @@ input#searchButton:focus {
 
 #titleProduse {
     position: relative;
+	text-align: center;
     top: 75px;
     left: 50px;
     color: black;
