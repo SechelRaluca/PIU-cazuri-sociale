@@ -26,60 +26,69 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>		
 	 <script src="../js/atelier.js"></script>
+
+	<script>
+        $(document).ready(function () {
+            $('.dropdown-menu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+	</script>
 </head>
 
 <body id="#homepage">
 <!--<div th:include="fragments/header :: header"></div>-->
 <div th:fragment="header">
-    <!-- Application NAVBAR -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                        data-target="#myNavbar">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                        class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.html">Acasă</a></li>
-                    <li><a class="dropdown-toggle"
-                           data-toggle="dropdown"
-                           href="#">Implică-te!<span
-                            class="caret"></span></a>
-                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-toggle"
-								   href="#">Donează<span
-								   class="caret"></span></a>
-								<ul class="dropdown-submenu">
-								    <li><a href="donatiiMonetare.html">Donează online</a></li>
-									<li><a href="directioneaza2%.html">Donează 2%</a></li>
+	<!-- Application NAVBAR -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../index.html">Acasă</a></li>
+					<li><a class="dropdown-toggle"
+						   data-toggle="dropdown"
+						   href="#">Implică-te!<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="test" tabindex="-1" href="#">Donează <span class="caret"></span></a>
+								<ul class="dropdown-menu sub-dropdown-menu ">
+									<li><a href="donatiiMonetare.html">Doneaza online</a></li>
+									<li><a href="directioneaza2%25.html">Donează 2%</a></li>
 									<li><a href="donatiiBunuri.html">Donează bunuri</a></li>
-									<li><a href="actioneaza.html">Donează pentru un caz</a></li>								
+									<li><a href="actioneaza.html">Donează pentru un anumit caz</a></li>
 								</ul>
 							</li>
-                            <li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
-                            <li><a href="participaLaEveniment.html">Participă la eveniment</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="dropdown-toggle"
-                           data-toggle="dropdown"
-                           href="#">Ce facem?<span
-                            class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="despreNoi.html">Despre noi</a></li>
-                            <li><a href="cazuriRezolvate.html">Cazuri recent rezolvate</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="atelier.html">Atelier</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="../fragments/login.html">Intră</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- 	End of Application NAVBAR -->
+							<li><a href="inregistrareVoluntar.html">Fii voluntar</a></li>
+							<li><a href="participaLaEveniment.html">Participă la eveniment</a></li>
+						</ul>
+					</li>
+					<li><a class="dropdown-toggle"
+						   data-toggle="dropdown"
+						   href="#">Ce facem?<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="despreNoi.html">Despre noi</a></li>
+							<li><a href="cazuriRezolvate.html">Cazuri recent rezolvate</a></li>
+						</ul>
+					</li>
+					<li><a href="atelier.html">Atelier</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="../fragments/login.html">Intră</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- 	End of Application NAVBAR -->
 
 </div>
 
@@ -216,7 +225,7 @@
 <div id="footerProduse">
 		<p class="footerEvenimente">Poţi să ajuţi!
 		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-				data-toggle="modal" onclick="window.location = 'doneaza.html'">Donează</button>
+				data-toggle="modal" onclick="window.location = 'donatiiMonetare.html'">Donează</button>
 		
 		<button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
 				data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!</button>
@@ -329,8 +338,9 @@
 			
 					  <div class="form-group">
 						<label for="dataExpirare" class="form-control-label">Data expirare:</label>
+						<input type="date"  min="01/16/2018" class="form-control inputPlata2" id="dataExpirare" onblur=""  required="required">
 						<input type="date" class="form-control inputPlata2" id="dataExpirare" onblur=""  required="required">
-					  </div> 
+					  </div>
 					  
 					   <div class="form-group">
 						<label for="numarVerificareCard" class="form-control-label">Număr verificare card:</label>

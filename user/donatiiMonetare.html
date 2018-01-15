@@ -134,16 +134,15 @@
             <br>
             <br>
             <br>
-            <br>
-            <br>
             <p>
                 Sau prin transfer bancar:<br>
+                <br>
+            <ul class="bullet">
+                <li>În RON: RO 67 RZBR 0000 0600 0510 0708</li>
+                <li>În EUR: RO 72 RZBR 0000 0600 0805 8342</li>
+                <li>În USD: RO 97 RZBR 0000 0600 0520 4928</li>
 
-                În RON: RO 67 RZBR 0000 0600 0510 0708<br>
-
-                În EUR: RO 72 RZBR 0000 0600 0805 8342<br>
-
-                În USD: RO 97 RZBR 0000 0600 0520 4928<br>
+            </ul>
             </p>
             <br>
             <br>
@@ -175,7 +174,6 @@
 
 <div id="donateModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -217,47 +215,6 @@
     </div>
 </div>
 
-<!--<div id="payModal1" class="modal fade" role="dialog">-->
-<!--<div class="modal-dialog">-->
-
-<!--&lt;!&ndash; Modal content&ndash;&gt;-->
-<!--<div class="modal-content">-->
-<!--<div class="modal-header">-->
-<!--<button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); resetFieldsCardPopup('cardNumber1', 'expirationDate1', 'cardVerificationNumber1');"-->
-<!--type="button" class="close" data-dismiss="modal">&times;-->
-<!--</button>-->
-<!--<h4 class="modal-title">Detalii card bancar</h4>-->
-<!--</div>-->
-<!--<div class="modal-body" style="color: black; overflow: auto;">-->
-<!--<label class="paragraphAdjust helpSection">Tip card:</label>-->
-<!--<select id="card1">-->
-<!--<option value="mastercard">Mastercard</option>-->
-<!--<option value="maestro">Maestro</option>-->
-<!--<option value="visa">Visa</option>-->
-<!--<option value="visaElectron">Visa Electron</option>-->
-<!--</select>-->
-<!--<br>-->
-<!--<label class="paragraphAdjust formSection">Număr card:</label><br>-->
-<!--<input id="cardNumber1" onblur="validateCardNumber('cardNumber1')" type="text" autocomplete="off"-->
-<!--placeholder="nnnn nnnn nnnn nnnn"><br>-->
-<!--<label class="paragraphAdjust formSection">Data expirării:</label><br>-->
-<!--<input id="expirationDate1" onblur="isValid('expirationDate1')" type="date" class="form-control"-->
-<!--name="expirationDate"-->
-<!--th:required="required"/>-->
-<!--<label class="paragraphAdjust formSection">Număr verificare card:</label><br>-->
-<!--<input id="cardVerificationNumber1" onblur="validateCardVerificationNumber('cardVerificationNumber1')"-->
-<!--type="text" autocomplete="off" placeholder="nnn"><br>-->
-<!--<br>-->
-<!--<button id="pay1"-->
-<!--onclick="pay('cardNumber1', 'expirationDate1', 'cardVerificationNumber1', '#pay1'); resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); disablePopup('#payModal1');"-->
-<!--type="button" class="btn btn-primary btn-lg btn-success"-->
-<!--data-toggle="modal">-->
-<!--Plăteşte-->
-<!--</button>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 
 <div id="payModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -290,7 +247,7 @@
 
                     <div class="form-group">
                         <label for="dataExpirare" class="form-control-label">Data expirare:</label>
-                        <input type="date" class="form-control inputPlata2" id="dataExpirare" onblur=""
+                        <input type="date"  min="01/16/2018" class="form-control inputPlata2" id="dataExpirare" onblur=""
                                required="required">
                     </div>
 

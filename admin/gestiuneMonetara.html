@@ -32,6 +32,10 @@
             $(buton).attr('data-target', "");
             $(buton).attr('data-dismiss', "");
         }
+
+        function resetField() {
+            document.getElementById('msg').value = "";
+        }
     </script>
 
 </head>
@@ -55,7 +59,7 @@
                     <li><a href="generareRaporturi.html">Generare raporturi</a></li>
                     <li><a href="adaugareMembru.html">Adaugă membru</a></li>
                     <li><a href="gestiuneMonetara.html">Gestiune monetară</a></li>
-					<li><a href="../index.html">Ieșire</a></li>
+                    <li><a href="../index.html">Ieșire</a></li>
                 </ul>
             </div>
         </div>
@@ -73,8 +77,9 @@
         <div class="row">
             <div>
                 <form class="col-md-4"
-                      style="height: 50%;width: 50%;">
+                      style="height: 50%;width: 50%; margin-left: -100px">
                     <img
+                            style="margin-left: 200px;  margin-bottom: 20px"
                             src="../images/smile.jpeg" width="50px" height="50px"
                             class="img-rounded img-responsive"
                             th:src="@{../images/smile.jpeg}"/>
@@ -88,11 +93,12 @@
                 <form class="col-md-4"
                       style="height: 50%;width: 50%;">
                     <img
+                            style="margin-left: 200px; margin-bottom: 20px"
                             src="../images/sad.jpg" width="50px" height="50px"
                             class="img-rounded img-responsive"
                             th:src="@{../images/sad.jpg}"/>
                     <button type="button" class="btn btn-primary btn-lg btn-success"
-                            data-toggle="modal" data-target="#notModal">Notificare
+                            data-toggle="modal" data-target="#notModal">Fonduri insuficiente
                     </button>
                 </form>
             </div>
@@ -114,7 +120,7 @@
             <div class="modal-body">
                 <button onclick="toastr.info('Repartizare realizată cu succes!');
                        clicked_on()"
-                        type="button" class="btn btn-primary btn-lg btn-success">
+                        type="button" data-dismiss="modal" class="btn btn-primary btn-lg btn-success">
                     Confirmare
                 </button>
 
@@ -142,18 +148,18 @@
             </div>
             <div class="modal-body">
                 <button data-toggle="modal" data-target="#emailModal"
-                        type="button" class="btn btn-primary btn-lg btn-success">
+                        type="button" data-dismiss="modal" class="btn btn-primary btn-lg btn-success">
                     Confirmare
                 </button>
 
-                <button onclick="toastr.error('Notificare anulată!')"
+                <button onclick="toastr.error('Notificare anulată!'); resetField()"
                         type="button" class="btn btn-primary btn-lg btn-success"
                         data-dismiss="modal">
                     Anulare
                 </button>
             </div>
             <div id="close" class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" onclick="resetField()" data-dismiss="modal">Close</button>
             </div>
         </div>
 
@@ -202,11 +208,13 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button onclick="toastr.info('E-mail trimis cu succes!')"
+                <button onclick="toastr.info('E-mail trimis cu succes!'); resetField()"
                         data-dismiss="modal" type="button" class="btn btn-default"
                 >Trimite
                 </button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"
+                        onclick="resetField()">Close
+                </button>
             </div>
         </div>
 

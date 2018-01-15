@@ -240,16 +240,19 @@ div section h3 {
 #sumaCaz1 {
     color: black;
     float: left;
+    margin-top: 15px;
 }
 
 #sumaCaz2 {
     color: black;
     float: left;
+    margin-top: 15px;
 }
 
 #sumaCaz3 {
     color: black;
     float: left;
+    margin-top: 15px;
 }
 
 #baniCazSocial {
@@ -303,7 +306,7 @@ div section h3 {
     padding-top: 60px;
     padding-left: 60px;
     margin-right: 0px;
-    width: 50%;
+    width: 100%;
 }
 
 .clear {
@@ -925,4 +928,10 @@ input#searchButton:focus {
 
 .inputPlata2 {
     width: 50%;
+}
+
+.butonRepartizare{
+    margin-left: -530px;
+    margin-top: 8px;
+
 }
