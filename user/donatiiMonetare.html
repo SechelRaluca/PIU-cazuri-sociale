@@ -24,7 +24,7 @@
           href="../css/project.css" th:href="@{/css/project.css}"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
-    <script src="../js/actioneaza.js"></script>
+    <script src="../js/donatiiMonetare.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -91,15 +91,28 @@
     <!-- 	End of Application NAVBAR -->
 
 </div>
-
 <div>
-    <div>
-        <div id="fixed">Donează online<br>
-            <br>
-            <h3>Ia parte la povestea noastră!</h3>
-        </div>
-        <div id="list">
+    <div id="titleEvenimente">Donează online<br>
+    </div>
+    <div id="containerEvenimente">
+        <div class="rightEvenimente">
+            <div id="band" class="container text-center rightAdjust">
+                <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+            </div>
 
+            <div class="rightInnerEvenimente">
+                <img src="../images/caz2.jpg" width="200px" height="140px">
+                <p>Educaţie</p>
+
+                <img src="../images/caz3.jpg" width="200px" height="140px">
+                <p>Suport</p>
+
+                <img src="../images/caz1.jpg" width="200px" height="140px">
+                <p>Sănătate</p>
+            </div>
+        </div>
+        <div id="listEvenimente">
+            <br>
             <p>
                 Donația ta ne va ajuta să mărim numarul personaelor ajutate, să oferim
                 mese hranitoare acestora, să cumparam haine, produse alimentare sau jocuri
@@ -135,46 +148,28 @@
             <br>
             <br>
             <hr id="line">
-
-            <section id="sectionAdjust" class="helpSection">
-                <p class="footerEvenimente">Poţi să ajuţi!
-                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-                            data-toggle="modal" onclick="window.location = 'directioneaza2%25.html'">Donează 2%
-                    </button>
-
-                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-                            data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
-                    </button>
-                </p>
-                <p class="footerEvenimente">
-                    Contactează-ne:
-                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-                            data-toggle="modal" onclick="window.location = 'contact.html'">Contact
-                    </button>
-                </p>
-            </section>
-        </div>
-
-    </div>
-
-
-    <div class="fit">
-        <div id="band" class="container text-center adjust">
-            <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
-        </div>
-
-        <div class="fit1">
-            <img src="../images/caz2.jpg" width="200px" height="140px">
-            <p>Educaţie</p>
-
-            <img src="../images/caz3.jpg" width="200px" height="140px">
-            <p>Suport</p>
-
-            <img src="../images/caz1.jpg" width="200px" height="140px">
-            <p>Sănătate</p>
         </div>
     </div>
+</div>
 
+<div class="clear"></div>
+<br>
+<div id="footerDirectioneaza3">
+    <p class="footerEvenimente">Poţi să ajuţi!
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'directioneaza2%25.html'">Donează 2%
+        </button>
+
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
+        </button>
+    </p>
+    <p class="footerEvenimente">
+        Contactează-ne:
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'contact.html'">Contact
+        </button>
+    </p>
 </div>
 
 
@@ -222,45 +217,100 @@
     </div>
 </div>
 
+<!--<div id="payModal1" class="modal fade" role="dialog">-->
+<!--<div class="modal-dialog">-->
+
+<!--&lt;!&ndash; Modal content&ndash;&gt;-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header">-->
+<!--<button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); resetFieldsCardPopup('cardNumber1', 'expirationDate1', 'cardVerificationNumber1');"-->
+<!--type="button" class="close" data-dismiss="modal">&times;-->
+<!--</button>-->
+<!--<h4 class="modal-title">Detalii card bancar</h4>-->
+<!--</div>-->
+<!--<div class="modal-body" style="color: black; overflow: auto;">-->
+<!--<label class="paragraphAdjust helpSection">Tip card:</label>-->
+<!--<select id="card1">-->
+<!--<option value="mastercard">Mastercard</option>-->
+<!--<option value="maestro">Maestro</option>-->
+<!--<option value="visa">Visa</option>-->
+<!--<option value="visaElectron">Visa Electron</option>-->
+<!--</select>-->
+<!--<br>-->
+<!--<label class="paragraphAdjust formSection">Număr card:</label><br>-->
+<!--<input id="cardNumber1" onblur="validateCardNumber('cardNumber1')" type="text" autocomplete="off"-->
+<!--placeholder="nnnn nnnn nnnn nnnn"><br>-->
+<!--<label class="paragraphAdjust formSection">Data expirării:</label><br>-->
+<!--<input id="expirationDate1" onblur="isValid('expirationDate1')" type="date" class="form-control"-->
+<!--name="expirationDate"-->
+<!--th:required="required"/>-->
+<!--<label class="paragraphAdjust formSection">Număr verificare card:</label><br>-->
+<!--<input id="cardVerificationNumber1" onblur="validateCardVerificationNumber('cardVerificationNumber1')"-->
+<!--type="text" autocomplete="off" placeholder="nnn"><br>-->
+<!--<br>-->
+<!--<button id="pay1"-->
+<!--onclick="pay('cardNumber1', 'expirationDate1', 'cardVerificationNumber1', '#pay1'); resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); disablePopup('#payModal1');"-->
+<!--type="button" class="btn btn-primary btn-lg btn-success"-->
+<!--data-toggle="modal">-->
+<!--Plăteşte-->
+<!--</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
 <div id="payModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button onclick="resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); resetFieldsCardPopup('cardNumber1', 'expirationDate1', 'cardVerificationNumber1');"
-                        type="button" class="close" data-dismiss="modal">&times;
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Detalii card bancar</h4>
+                <h4 class="modal-title" id="modalAdaugaProdusTitleHeader">Card bancar:</h4>
             </div>
-            <div class="modal-body" style="color: black; overflow: auto;">
-                <label class="paragraphAdjust helpSection">Tip card:</label>
-                <select id="card1">
-                    <option value="mastercard">Mastercard</option>
-                    <option value="maestro">Maestro</option>
-                    <option value="visa">Visa</option>
-                    <option value="visaElectron">Visa Electron</option>
-                </select>
-                <br>
-                <label class="paragraphAdjust formSection">Număr card:</label><br>
-                <input id="cardNumber1" onblur="validateCardNumber('cardNumber1')" type="text" autocomplete="off"
-                       placeholder="nnnn nnnn nnnn nnnn"><br>
-                <label class="paragraphAdjust formSection">Data expirării:</label><br>
-                <input id="expirationDate1" onblur="isValid('expirationDate1')" type="date" class="form-control"
-                       name="expirationDate"
-                       th:required="required"/>
-                <label class="paragraphAdjust formSection">Număr verificare card:</label><br>
-                <input id="cardVerificationNumber1" onblur="validateCardVerificationNumber('cardVerificationNumber1')"
-                       type="text" autocomplete="off" placeholder="nnn"><br>
-                <br>
-                <button id="pay1"
-                        onclick="pay('cardNumber1', 'expirationDate1', 'cardVerificationNumber1', '#pay1'); resetFieldsDonatePopup('#monthly1', '#oneTime1', 'sumCase1', 'lastName1', 'firstName1', 'phoneNumber1', 'email1'); disablePopup('#donate1'); disablePopup('#payModal1');"
-                        type="button" class="btn btn-primary btn-lg btn-success"
-                        data-toggle="modal">
-                    Plăteşte
-                </button>
+            <div class="modal-body">
+
+                <form>
+                    <div class="form-group">
+                        <label for="tipCard" class="form-control-label">Tip card:</label>
+                        <select id="tipCard" class="form-control inputPlata2">
+                            <option value="mastercard">Mastercard</option>
+                            <option value="maestro">Maestro</option>
+                            <option value="visa">Visa</option>
+                            <option value="visaElectron">Visa Electron</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numarCard" class="form-control-label">Număr card:</label>
+                        <input type="text" class="form-control inputPlata2" id="numarCard" onblur="" autocomplete="off"
+                               placeholder="####-####-####-####" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+                               required="required" onkeydown="validateCardNumber(event)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataExpirare" class="form-control-label">Data expirare:</label>
+                        <input type="date" class="form-control inputPlata2" id="dataExpirare" onblur=""
+                               required="required">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numarVerificareCard" class="form-control-label">Număr verificare card:</label>
+                        <input type="text" class="form-control inputPlata2" id="numarVerificareCard" onblur=""
+                               autocomplete="off" placeholder="###" pattern="[0-9]{3}" required="required"
+                               onkeydown="validateCVC(event)">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" id="buttonPlataComanda" class="btn btn-primary"
+                                onclick="platesteComanda()">Plătește
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
 </body>

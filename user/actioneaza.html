@@ -37,13 +37,6 @@
         });
     </script>
 
-    <script>
-        function openMenu() {
-            $('.nav a.menu').next('ul').toggle();
-            $('.dropdown-menu a.test').next('ul').toggle();
-        }
-    </script>
-
 </head>
 
 <body id="#homepage">
@@ -62,7 +55,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../index.html">Acasă</a></li>
-                    <li><a class="menu dropdown-toggle"
+                    <li><a class="dropdown-toggle"
                            data-toggle="dropdown"
                            href="#">Implică-te!<span
                             class="caret"></span></a>
@@ -101,95 +94,79 @@
 </div>
 
 <div>
-    <div>
-        <div id="fixed">Donează pentru un caz<br>
-            <input id="searchButton" type="text" name="search" placeholder="Caută...">
-            <br><a class="pagination1" href="actioneaza.html">1</a>
-            <a class="pagination2">2</a>
-            <a class="pagination3">3</a>
-            <a class="pagination4">...</a>
-            <a class="pagination5">20</a>
-        </div>
+    <div id="titleEvenimente">Donează pentru un caz<br>
+        <!--<input id="searchButton" type="search" name="search" placeholder="Caută...">-->
+        <input id="searchButton" type="text" name="search" placeholder="Caută...">
+    </div>
+    <div id="containerEvenimente">
+        <div class="rightEvenimente">
+            <div id="band" class="container text-center rightAdjust">
+                <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
+            </div>
 
-        <div id="list">
-            <section id="sectionAdjust">
-                <img src="../images/caz1.jpg">
-                <p class="paragraphAdjust">Caz 1</p>
-                <button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+            <div class="rightInnerEvenimente">
+                <img src="../images/caz2.jpg" width="200px" height="140px">
+                <p>Educaţie</p>
+
+                <img src="../images/caz3.jpg" width="200px" height="140px">
+                <p>Suport</p>
+
+                <img src="../images/caz1.jpg" width="200px" height="140px">
+                <p>Sănătate</p>
+            </div>
+        </div>
+        <div id="listEvenimente">
+            <section id="sectionEveniment">
+                <img class="center" src="../images/caz1.jpg">
+                <p class="center" class="paragraphAdjust">Caz 1</p>
+                <button type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
                         data-toggle="modal" data-target="#detailModal1">Detalii
                 </button>
             </section>
-            <section id="sectionAdjust">
-                <img src="../images/caz2.jpg">
-                <p class="paragraphAdjust">Caz 2</p>
-                <button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+            <section id="sectionEveniment">
+                <img class="center" src="../images/caz2.jpg">
+                <p class="center" class="paragraphAdjust">Caz 2</p>
+                <button type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
                         data-toggle="modal" data-target="#detailModal2">Detalii
                 </button>
             </section>
 
-            <br><br>
-            <br><br>
-            <br><br>
-            <br>
-
-            <section id="sectionAdjust">
-                <img src="../images/caz3.jpg">
-                <p class="paragraphAdjust">Caz 3</p>
-                <button type="button" class="btn btn-primary btn-lg btn-success detailButton"
+            <section id="sectionEveniment">
+                <img class="center" src="../images/caz3.jpg">
+                <p class="center" class="paragraphAdjust">Caz 3</p>
+                <button type="button" class="btn btn-primary btn-lg btn-success detailButtonEveniment"
                         data-toggle="modal" data-target="#detailModal3">Detalii
                 </button>
             </section>
 
-            <br><br>
-            <br><br>
-            <br><br>
-            <br>
+            <nav aria-label="Page navigation example" id="navPaging">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
             <hr id="line">
-
-            <section id="sectionAdjust" class="helpSection">
-                <p class="footerEvenimente">Poţi să ajuţi!
-                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-                            data-toggle="modal" onclick="window.location = 'donatiiMonetare.html'">Donează
-                    </button>
-
-                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-                            data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
-                    </button>
-                </p>
-                <p class="footerEvenimente">
-                    Contactează-ne:
-                    <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
-                            data-toggle="modal" onclick="window.location = 'contact.html'">Contact
-                    </button>
-                </p>
-            </section>
         </div>
 
+
     </div>
 </div>
 
-
-<div class="fit">
-    <div id="band" class="container text-center adjust">
-        <h3 style="letter-spacing: 0px;">Unde acţionăm?</h3>
-    </div>
-
-    <div class="fit1">
-        <img src="../images/caz2.jpg" width="200px" height="140px">
-        <p>Educaţie</p>
-
-        <img src="../images/caz3.jpg" width="200px" height="140px">
-        <p>Suport</p>
-
-        <img src="../images/caz1.jpg" width="200px" height="140px">
-        <p>Sănătate</p>
-    </div>
-</div>
-
-<br>
-<br>
-<br>
+<div class="clear"></div>
 
 <div id="detailModal1" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -519,6 +496,24 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="footerEvenimente3">
+    <p class="footerEvenimente">Poţi să ajuţi!
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'directioneaza2%25.html'">Donează 2%
+        </button>
+
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'inregistrareVoluntar.html'">Fii voluntar!
+        </button>
+    </p>
+    <p class="footerEvenimente">
+        Contactează-ne:
+        <button type="button" class="btn btn-primary btn-lg btn-success footerEvenimente"
+                data-toggle="modal" onclick="window.location = 'contact.html'">Contact
+        </button>
+    </p>
 </div>
 
 </body>
