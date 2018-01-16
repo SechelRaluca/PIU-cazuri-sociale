@@ -10,10 +10,12 @@ function inscriereEveniment()
 	validareNumeParticipant();
 	validarePrenumeParticipant();
 	validareTelefonParticipant();
+	validareInfo();
 		
 	if (validareNumeParticipant() && 
 		validarePrenumeParticipant() &&
-		validareTelefonParticipant())	
+		validareTelefonParticipant() &&
+		validareInfo())	
 		{			
 			var nrPers = parseInt(evenimente[evenimentSelectat].numarPersoaneEveniment);
 			nrPers --;
@@ -58,6 +60,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
 		
+	document.getElementById('informatiiAjutorEveniment').oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Introduceți informații !");
+            }
+        };
+		
 });
 
 function validareNumeParticipant()
@@ -71,6 +80,20 @@ function validareNumeParticipant()
 	}
 	
 	document.getElementById('numeParticipant').style.borderColor = "#d6d6d6";
+	return true;
+}
+
+function validareInfo()
+{
+	var informatiiAjutorEveniment = document.getElementById('informatiiAjutorEveniment').value;
+	
+	if (informatiiAjutorEveniment === "" || (!informatiiAjutorEveniment.replace(/\s/g, '').length))
+	{
+		document.getElementById('informatiiAjutorEveniment').style.borderColor = "red";
+		return false;
+	}
+	
+	document.getElementById('informatiiAjutorEveniment').style.borderColor = "#d6d6d6";
 	return true;
 }
 
