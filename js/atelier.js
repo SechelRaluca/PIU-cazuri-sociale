@@ -59,10 +59,8 @@ function platesteComanda() {
     }
 
     if (valid) {
-        setTimeout(function(){
-        toastr.info('Plată efectuată cu succes!');
-	}, 500);
-        //$('#modalPlata').modal('hide');
+        $('#modalPlata').modal('hide');
+        alert('Plată efectuată cu succes!');
     }
 
 }

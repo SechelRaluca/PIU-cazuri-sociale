@@ -1,129 +1,129 @@
-function validateSum(sumaDeDonat){
+function validateSum(sumaDeDonat) {
     var sumaDeDonatCazului = parseInt(document.getElementById(sumaDeDonat).value, 10);
 
-    if(isNaN(parseInt(document.getElementById(sumaDeDonat).value, 10))) {
+    if (isNaN(parseInt(document.getElementById(sumaDeDonat).value, 10))) {
         //toastr.error('Câmpul numeric trebuie completat!');
         //document.getElementById(sumaDeDonat).focus();
-		document.getElementById(sumaDeDonat).style.borderColor = "red";
+        document.getElementById(sumaDeDonat).style.borderColor = "red";
         return false;
     }
 
-    if(sumaDeDonatCazului <= 0){
+    if (sumaDeDonatCazului <= 0) {
         //toastr.error('Introduceţi o valoare pozitivă nenulă!');
         document.getElementById(sumaDeDonat).value = "";
         //document.getElementById(sumaDeDonat).focus();
-		document.getElementById(sumaDeDonat).style.borderColor = "red";
+        document.getElementById(sumaDeDonat).style.borderColor = "red";
         return false;
     }
 
-	document.getElementById(sumaDeDonat).style.borderColor = "#d6d6d6";
+    document.getElementById(sumaDeDonat).style.borderColor = "#d6d6d6";
     return true;
 }
 
-function validateLastName(nume){
+function validateLastName(nume) {
     var lastName = document.getElementById(nume);
-    if(lastName.value.search(/[^a-zA-Z]+/) === -1){
-        if(lastName.value.length < 3) {
+    if (lastName.value.search(/[^a-zA-Z]+/) === -1) {
+        if (lastName.value.length < 3) {
             //toastr.error('Lungimea câmpului trebuie să fie mai mare sau egală cu 3!');
-           //lastName.focus();
-			lastName.style.borderColor = "red";
+            //lastName.focus();
+            lastName.style.borderColor = "red";
             return false;
-        }else{
-			lastName.style.borderColor = "#d6d6d6";
+        } else {
+            lastName.style.borderColor = "#d6d6d6";
             return true;
         }
-    }else{
+    } else {
         //toastr.error('Câmpul trebuie să conţină doar litere!');
         //lastName.focus();
-		lastName.style.borderColor = "red";
+        lastName.style.borderColor = "red";
         return false;
     }
 }
 
-function validateFirstName(prenume){
+function validateFirstName(prenume) {
     var firstName = document.getElementById(prenume);
-    if(firstName.value.search(/[^a-zA-Z]+/) === -1){
-        if(firstName.value.length < 3) {
+    if (firstName.value.search(/[^a-zA-Z]+/) === -1) {
+        if (firstName.value.length < 3) {
             //toastr.error('Lungimea câmpului trebuie să fie mai mare sau egală cu 3!');
             //firstName.focus();
-			firstName.style.borderColor = "red";
+            firstName.style.borderColor = "red";
             return false;
-        }else{
-			firstName.style.borderColor = "#d6d6d6";
+        } else {
+            firstName.style.borderColor = "#d6d6d6";
             return true;
         }
-    }else{
+    } else {
         //toastr.error('Câmpul trebuie să conţină doar litere!');
         //firstName.focus();
-		firstName.style.borderColor = "red";
+        firstName.style.borderColor = "red";
         return false;
     }
 }
 
-function validatePhoneNumber(telefon){
+function validatePhoneNumber(telefon) {
     var phoneNumber = document.getElementById(telefon);
-    if(!/^\d{10}$/.test(phoneNumber.value)){
+    if (!/^\d{10}$/.test(phoneNumber.value)) {
         //toastr.error("Numărul de telefon nu respectă formatul nnnn-nnnnnn (4-6)");
         //phoneNumber.focus();
-		phoneNumber.style.borderColor = "red";
+        phoneNumber.style.borderColor = "red";
         return false;
-    }else{
-		phoneNumber.style.borderColor = "#d6d6d6";
+    } else {
+        phoneNumber.style.borderColor = "#d6d6d6";
         return true;
     }
 }
 
-function validateEmail(mail){
+function validateEmail(mail) {
     var email = document.getElementById(mail);
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)){
-		email.style.borderColor = "#d6d6d6";
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+        email.style.borderColor = "#d6d6d6";
         return true;
     }
     //toastr.error("Adresa de email nu este validă!");
     //email.focus();
-	email.style.borderColor = "#red";
+    email.style.borderColor = "#red";
     return false;
 }
 
 function donate(frecventa1, frecventa2, suma, nume, prenume, telefon, email, buton, popup) {
     var flag = 0;
 
-    if(!validateSum(suma)) {
+    if (!validateSum(suma)) {
         flag = 1;
     }
 
-    if(!validateLastName(nume)) {
+    if (!validateLastName(nume)) {
         flag = 1;
     }
 
-    if(!validateFirstName(prenume)) {
+    if (!validateFirstName(prenume)) {
         flag = 1;
     }
 
-    if(!validatePhoneNumber(telefon)) {
+    if (!validatePhoneNumber(telefon)) {
         flag = 1;
     }
 
-    if(!validateEmail(email)) {
+    if (!validateEmail(email)) {
         flag = 1;
     }
 
-    if(!$(frecventa1).prop('checked') && !$(frecventa2).prop('checked')) {
+    if (!$(frecventa1).prop('checked') && !$(frecventa2).prop('checked')) {
         flag = 1;
     }
 
-    if(flag == 1){
+    if (flag == 1) {
         //toastr.error("Verificaţi câmpurile formularului şi completaţile corespunzător pentru a efectua donaţia!");
         return false;
-    }else{
+    } else {
         //$(buton).attr('data-target', popup);
-       // $(buton).attr('data-dismiss', 'modal');
-	    resetFieldsDonatePopup(frecventa1, frecventa2, suma, nume, prenume, telefon, email, buton, popup);
+        // $(buton).attr('data-dismiss', 'modal');
+        resetFieldsDonatePopup(frecventa1, frecventa2, suma, nume, prenume, telefon, email, buton, popup);
         $('#donateModal1').modal('hide');
-		setTimeout(function(){
-		$('#modalPlata').modal('show');
-		}, 500);
-		
+        setTimeout(function () {
+            $('#modalPlata').modal('show');
+        }, 500);
+
         return true;
     }
 }
@@ -133,45 +133,46 @@ function disablePopup(buton) {
     $(buton).attr('data-dismiss', "");
 }
 
-function resetFieldsDonatePopup(frecventa1, frecventa2, suma, nume, prenume, telefon, email){
-    $(frecventa1).attr('checked',false);
-    $(frecventa2).attr('checked',false);
-    document.getElementById(suma).value="";
-    document.getElementById(nume).value="";
-    document.getElementById(prenume).value="";
-    document.getElementById(telefon).value="";
-    document.getElementById(email).value="";
+function resetFieldsDonatePopup(frecventa1, frecventa2, suma, nume, prenume, telefon, email) {
+    $(frecventa1).attr('checked', false);
+    $(frecventa2).attr('checked', false);
+    document.getElementById(suma).value = "";
+    document.getElementById(nume).value = "";
+    document.getElementById(prenume).value = "";
+    document.getElementById(telefon).value = "";
+    document.getElementById(email).value = "";
 }
 
 
-function resetFieldsCardPopup(cardNumber, expirationDate, cardVerificationNumber){
-    document.getElementById(cardNumber).value="";
-    document.getElementById(expirationDate).value="";
-    document.getElementById(cardVerificationNumber).value="";
+function resetFieldsCardPopup(cardNumber, expirationDate, cardVerificationNumber) {
+    document.getElementById(cardNumber).value = "";
+    document.getElementById(expirationDate).value = "";
+    document.getElementById(cardVerificationNumber).value = "";
 }
 
 function pay(cardNumber, expirationDate, cardVerificationNumber, buton) {
     var flag = 0;
 
-    if(!validateCardNumber(cardNumber)) {
+    if (!validateCardNumber(cardNumber)) {
         flag = 1;
     }
 
-    if(!isValid(expirationDate)) {
+    if (!isValid(expirationDate)) {
         flag = 1;
     }
 
-    if(!validateCardVerificationNumber(cardVerificationNumber)) {
+    if (!validateCardVerificationNumber(cardVerificationNumber)) {
         flag = 1;
     }
 
-    if(flag == 1){
+    if (flag == 1) {
         //toastr.error("Verificaţi câmpurile formularului şi completaţile corespunzător pentru a efectua plata!");
         return false;
-    }else{
+    } else {
         $(buton).attr('data-dismiss', 'modal');
         resetFieldsCardPopup(cardNumber, expirationDate, cardVerificationNumber);
         toastr.info('Donaţie efectuată cu succes!');
+        alert('Donaţie efectuată cu succes!');
         return true;
     }
 }
@@ -199,22 +200,22 @@ document.addEventListener("DOMContentLoaded", function () {
             e.target.setCustomValidity("Prenumele trebuie introdus !");
         }
     };
-	
-	document.getElementById('phoneNumber1').oninvalid = function (e) {
+
+    document.getElementById('phoneNumber1').oninvalid = function (e) {
         e.target.setCustomValidity("");
         if (!e.target.validity.valid) {
             e.target.setCustomValidity("Telefonul trebuie introdus și să conțină 10 cifre !");
         }
     };
-	
-	document.getElementById('email1').oninvalid = function (e) {
+
+    document.getElementById('email1').oninvalid = function (e) {
         e.target.setCustomValidity("");
         if (!e.target.validity.valid) {
             e.target.setCustomValidity("Email-ul trebuie introdus !");
         }
     };
-	
-	document.getElementById('numarCard').oninvalid = function (e) {
+
+    document.getElementById('numarCard').oninvalid = function (e) {
         e.target.setCustomValidity("");
         if (!e.target.validity.valid) {
             e.target.setCustomValidity("Numarul cardului trebuie introdus !");
@@ -236,15 +237,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-	$('#modalPlata').on('hide.bs.modal', function () {
-    setTimeout(function(){
-			$('#plataSucces').modal('show');
-		}, 1000);
+    $('#modalPlata').on('hide.bs.modal', function () {
+        setTimeout(function () {
+            $('#plataSucces').modal('show');
+        }, 1000);
     });
-	
-	$('#modalPlata').on('shown.bs.modal', function () {
-		alert('show event fired!');
-	});
+
+    $('#modalPlata').on('shown.bs.modal', function () {
+        alert('show event fired!');
+    });
 });
 
 function platesteComanda() {
@@ -271,12 +272,12 @@ function platesteComanda() {
 
     if (valid) {
         //$('#modalPlata').modal('hide');
-		setTimeout(function(){
-			$('#plataSucces').modal('show');
-		}, 500);
-	
-		toastr.info('Plată efectuată cu succes!');
-		
+        setTimeout(function () {
+            $('#plataSucces').modal('show');
+        }, 500);
+
+        toastr.info('Plată efectuată cu succes!');
+
     }
 
 }
